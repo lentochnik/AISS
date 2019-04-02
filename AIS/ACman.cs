@@ -29,7 +29,7 @@ namespace AIS
 
         private void LoadData_Grid()  // Таблица из базы данных
         {
-            string connectString = @"Data Source=NIXE-PC\SQLExpress;Initial Catalog=AIS;Integrated Security=True;" +
+            string connectString = Data.msqlc.Sqlconnect +
                 "Integrated Security=true;";
 
             SqlConnection myConnection = new SqlConnection(connectString);

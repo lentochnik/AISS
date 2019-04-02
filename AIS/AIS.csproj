@@ -58,6 +58,7 @@
     <Compile Include="AISS.Designer.cs">
       <DependentUpon>AISS.cs</DependentUpon>
     </Compile>
+    <Compile Include="Data\msqlc.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +67,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ACman.en.resx">
+      <DependentUpon>ACman.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ACman.resx">
       <DependentUpon>ACman.cs</DependentUpon>
     </EmbeddedResource>

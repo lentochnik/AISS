@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 
 
+
 namespace AIS
 {
     public partial class Login : Form
@@ -41,7 +42,8 @@ namespace AIS
 
         private void button3_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=NIXE-PC\SQLEXPRESS;Initial Catalog=AIS;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+            
+            SqlConnection con = new SqlConnection(Data.msqlc.Sqlconnect);
             SqlDataAdapter sda = new SqlDataAdapter("Select Role From Users Where Uname= '" + textBox1.Text + "' and Pass='" + textBox2.Text + "' ", con);
             DataTable dt = new System.Data.DataTable();
             sda.Fill(dt);
