@@ -20,6 +20,8 @@ namespace AIS
             InitializeComponent();
         }
 
+        SqlConnection conn = Param.GetDBConnection();
+
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -42,9 +44,10 @@ namespace AIS
 
         private void button3_Click(object sender, EventArgs e)
         {
-            
-            SqlConnection con = new SqlConnection(Data.msqlc.Sqlconnect);
-            SqlDataAdapter sda = new SqlDataAdapter("Select Role From Users Where Uname= '" + textBox1.Text + "' and Pass='" + textBox2.Text + "' ", con);
+
+            // SqlConnection con = new SqlConnection(Data.Msqlc.sconn);
+            conn.Open();
+            SqlDataAdapter sda = new SqlDataAdapter("Select Role From Users Where Uname= '" + textBox1.Text + "' and Pass='" + textBox2.Text + "' ", conn);
             DataTable dt = new System.Data.DataTable();
             sda.Fill(dt);
             if (dt.Rows.Count == 1)
@@ -64,6 +67,7 @@ namespace AIS
                     MessageBoxOptions.DefaultDesktopOnly
                     );
             }
+            conn.Close();
         }
 
       

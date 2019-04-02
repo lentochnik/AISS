@@ -17,9 +17,13 @@ namespace AIS
         {
             InitializeComponent();
             LoadData_Grid();
-        
+
         }
 
+        static string connectString = Msqlc.sconn;// +
+               // "Integrated Security=true;";
+
+        SqlConnection myConnection = new SqlConnection(connectString);
 
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -29,8 +33,8 @@ namespace AIS
 
         private void LoadData_Grid()  // Таблица из базы данных
         {
-            string connectString = Data.msqlc.Sqlconnect +
-                "Integrated Security=true;";
+       //     string connectString = Data.msqlc.sconn +
+           //     "Integrated Security=true;";
 
             SqlConnection myConnection = new SqlConnection(connectString);
 
@@ -84,6 +88,72 @@ namespace AIS
 
         private void ACman_Load(object sender, EventArgs e)
         {
+
+        }
+
+        public bool Login_check(string z)
+        {
+            bool x;
+
+            myConnection.Open();
+            SqlDataAdapter sda = new SqlDataAdapter("Select Uname From Users Where Uname='" + z + "'", myConnection);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+
+            if (dt.Rows.Count == 1)
+                x = false;
+            else
+                x = true;
+
+            myConnection.Close();
+            return x;
+        }
+      public bool  Pass_check(string z)
+        {
+            bool x;
+            if (textBox2.Text != textBox1.Text)
+                x = true;
+            else
+                x = false;
+            return x;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (Login_check(textBox1.Text) && Pass_check(textBox2.Text) && comboBox1 != null)
+                {
+                MessageBox.Show
+                (
+                  "Ready",
+                  "Ready",
+                  MessageBoxButtons.OK,
+                  MessageBoxIcon.Information,
+                  MessageBoxDefaultButton.Button1,
+                  MessageBoxOptions.DefaultDesktopOnly
+                  );
+                }
+            else
+            {
+                MessageBox.Show
+                                 (
+                                 "Invalid username or password",
+                                 "Error",
+                                 MessageBoxButtons.OK,
+                                 MessageBoxIcon.Error,
+                                 MessageBoxDefaultButton.Button1,
+                                 MessageBoxOptions.DefaultDesktopOnly
+                                 );
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            myConnection.Open();
+            SqlDataAdapter sda = new SqlDataAdapter("Select Role From Users=", myConnection);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            comboBox1.DataSource = dt;
+            myConnection.Close();
 
         }
     }

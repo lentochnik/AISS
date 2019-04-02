@@ -58,7 +58,8 @@
     <Compile Include="AISS.Designer.cs">
       <DependentUpon>AISS.cs</DependentUpon>
     </Compile>
-    <Compile Include="Data\msqlc.cs" />
+    <Compile Include="Data\Msqlc.cs" />
+    <Compile Include="Data\Param.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
