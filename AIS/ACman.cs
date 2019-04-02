@@ -81,5 +81,10 @@ namespace AIS
         {
 
         }
+
+        private void ACman_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

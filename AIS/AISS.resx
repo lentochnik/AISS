@@ -120,10 +120,6 @@
   <data name="menuStrip.Text" xml:space="preserve">
     <value>MenuStrip</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="accountManagementToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 22</value>
-  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="StLab.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -140,6 +136,7 @@
   <data name="statusStrip.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="toolStripStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 17</value>
   </data>
@@ -179,9 +176,6 @@
   <data name="StLab.Text" xml:space="preserve">
     <value>Status</value>
   </data>
-  <data name="&gt;&gt;menuStrip.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="&gt;&gt;statusStrip.Type" xml:space="preserve">
     <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -197,8 +191,8 @@
   <data name="StLab.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="&gt;&gt;StLab.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="statusStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>632, 22</value>
   </data>
   <data name="&gt;&gt;toolTip.Name" xml:space="preserve">
     <value>toolTip</value>
@@ -245,8 +239,8 @@
   <data name="&gt;&gt;adminToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="infoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 22</value>
+  <data name="&gt;&gt;menuStrip.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="&gt;&gt;statusStrip.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -260,8 +254,8 @@
   <data name="&gt;&gt;exitToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="StLab.Location" type="System.Drawing.Point, System.Drawing">
-    <value>590, 438</value>
+  <data name="&gt;&gt;StLab.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;menuStrip.Parent" xml:space="preserve">
     <value>$this</value>
@@ -291,14 +285,20 @@
   <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>95, 22</value>
   </data>
-  <data name="&gt;&gt;infoToolStripMenuItem.Name" xml:space="preserve">
-    <value>infoToolStripMenuItem</value>
+  <data name="accountManagementToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>193, 22</value>
   </data>
   <data name="&gt;&gt;fileToolStripMenuItem.Name" xml:space="preserve">
     <value>fileToolStripMenuItem</value>
   </data>
-  <data name="statusStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>632, 22</value>
+  <data name="StLab.Location" type="System.Drawing.Point, System.Drawing">
+    <value>590, 438</value>
+  </data>
+  <data name="&gt;&gt;infoToolStripMenuItem.Name" xml:space="preserve">
+    <value>infoToolStripMenuItem</value>
+  </data>
+  <data name="infoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 22</value>
   </data>
   <data name="StLab.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 15</value>

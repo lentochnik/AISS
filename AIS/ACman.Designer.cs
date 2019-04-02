@@ -163,6 +163,7 @@
             this.Controls.Add(this.Search_tacm);
             this.Controls.Add(this.dataGridView1);
             this.Name = "ACman";
+            this.Load += new System.EventHandler(this.ACman_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
