@@ -73,6 +73,9 @@
     <EmbeddedResource Include="ACman.resx">
       <DependentUpon>ACman.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AISS.en.resx">
+      <DependentUpon>AISS.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AISS.resx">
       <DependentUpon>AISS.cs</DependentUpon>
     </EmbeddedResource>

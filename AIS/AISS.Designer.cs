@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AISS));
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,104 +47,85 @@
             // 
             // menuStrip
             // 
+            resources.ApplyResources(this.menuStrip, "menuStrip");
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.adminToolStripMenuItem});
-            this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(632, 24);
-            this.menuStrip.TabIndex = 0;
-            this.menuStrip.Text = "MenuStrip";
+            this.toolTip.SetToolTip(this.menuStrip, resources.GetString("menuStrip.ToolTip"));
             this.menuStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip_ItemClicked);
             // 
             // fileToolStripMenuItem
             // 
+            resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.infoToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "File";
             // 
             // infoToolStripMenuItem
             // 
+            resources.ApplyResources(this.infoToolStripMenuItem, "infoToolStripMenuItem");
             this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
-            this.infoToolStripMenuItem.Size = new System.Drawing.Size(95, 22);
-            this.infoToolStripMenuItem.Text = "Info";
             // 
             // exitToolStripMenuItem
             // 
+            resources.ApplyResources(this.exitToolStripMenuItem, "exitToolStripMenuItem");
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(95, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // adminToolStripMenuItem
             // 
+            resources.ApplyResources(this.adminToolStripMenuItem, "adminToolStripMenuItem");
             this.adminToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.accountManagementToolStripMenuItem});
-            this.adminToolStripMenuItem.Enabled = false;
             this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
-            this.adminToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
-            this.adminToolStripMenuItem.Text = "Admin";
             this.adminToolStripMenuItem.Click += new System.EventHandler(this.adminToolStripMenuItem_Click);
             // 
             // accountManagementToolStripMenuItem
             // 
+            resources.ApplyResources(this.accountManagementToolStripMenuItem, "accountManagementToolStripMenuItem");
             this.accountManagementToolStripMenuItem.Name = "accountManagementToolStripMenuItem";
-            this.accountManagementToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
-            this.accountManagementToolStripMenuItem.Text = "Account management";
             this.accountManagementToolStripMenuItem.Click += new System.EventHandler(this.accountManagementToolStripMenuItem_Click);
             // 
             // statusStrip
             // 
+            resources.ApplyResources(this.statusStrip, "statusStrip");
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel,
             this.toolStripProgressBar1});
-            this.statusStrip.Location = new System.Drawing.Point(0, 431);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(632, 22);
-            this.statusStrip.TabIndex = 2;
-            this.statusStrip.Text = "StatusStrip";
+            this.toolTip.SetToolTip(this.statusStrip, resources.GetString("statusStrip.ToolTip"));
             // 
             // toolStripStatusLabel
             // 
+            resources.ApplyResources(this.toolStripStatusLabel, "toolStripStatusLabel");
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
-            this.toolStripStatusLabel.Size = new System.Drawing.Size(59, 17);
-            this.toolStripStatusLabel.Text = "Loading...";
-            this.toolStripStatusLabel.Visible = false;
             this.toolStripStatusLabel.Click += new System.EventHandler(this.toolStripStatusLabel_Click);
             // 
             // toolStripProgressBar1
             // 
+            resources.ApplyResources(this.toolStripProgressBar1, "toolStripProgressBar1");
             this.toolStripProgressBar1.Name = "toolStripProgressBar1";
-            this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 16);
-            this.toolStripProgressBar1.Visible = false;
             // 
             // StLab
             // 
-            this.StLab.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.StLab.AutoSize = true;
-            this.StLab.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.StLab.Location = new System.Drawing.Point(590, 438);
+            resources.ApplyResources(this.StLab, "StLab");
             this.StLab.Name = "StLab";
-            this.StLab.Size = new System.Drawing.Size(42, 15);
-            this.StLab.TabIndex = 4;
-            this.StLab.Text = "Status";
+            this.toolTip.SetToolTip(this.StLab, resources.GetString("StLab.ToolTip"));
             this.StLab.Click += new System.EventHandler(this.StLab_Click);
             // 
             // AISS
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(632, 453);
             this.Controls.Add(this.StLab);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;
             this.Name = "AISS";
-            this.Text = "АИС Склад";
+            this.toolTip.SetToolTip(this, resources.GetString("$this.ToolTip"));
             this.Load += new System.EventHandler(this.AISS_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
