@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 namespace AIS
 {
     public partial class ACman : Form
     {
+        MySqlConnection conn = Param.GetDBConnection();
+
         public ACman()
         {
             InitializeComponent();
@@ -20,33 +22,24 @@ namespace AIS
 
         }
 
-        static string connectString = Msqlc.sconn;// +
-               // "Integrated Security=true;";
-
-        SqlConnection myConnection = new SqlConnection(connectString);
-
-
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
-
+/*
+ * ------------------Заполнение Таблицы Grid---------------------------------
+ */
         private void LoadData_Grid()  // Таблица из базы данных
         {
-       //     string connectString = Data.msqlc.sconn +
-           //     "Integrated Security=true;";
+            conn.Open();
 
-            SqlConnection myConnection = new SqlConnection(connectString);
+            string query = "Select * From Users Order By Uname";   //Выделить имена пользователей из таблицы Пользователи
 
-            myConnection.Open();
+            MySqlCommand command = new MySqlCommand(query, conn);
 
-            string query = "SELECT * FROM Users ORDER BY Uname";
+            MySqlDataReader GV_Table = command.ExecuteReader();
 
-            SqlCommand command = new SqlCommand(query, myConnection);
-
-            SqlDataReader GV_Table = command.ExecuteReader();
-
-            List<string[]> data = new List<string[]>();
+            List<string[]> data = new List<string[]>();  // заполнить таблицу в 3 колонки
 
             while (GV_Table.Read())
             {
@@ -60,7 +53,7 @@ namespace AIS
 
             GV_Table.Close();
 
-            myConnection.Close();
+            conn.Close();
 
             foreach (string[] s in data)
                 dataGridView1.Rows.Add(s);
@@ -88,39 +81,63 @@ namespace AIS
 
         private void ACman_Load(object sender, EventArgs e)
         {
-
+/*
+ * ------------------Заполнить ComboBox из таблицы названиями Ролей--------------
+ */
+            comboBox1.Items.Clear();
+            conn.Open();
+            MySqlDataAdapter sda = new MySqlDataAdapter("SELECT Role FROM users", conn);
+            DataSet ds = new DataSet();
+            sda.Fill(ds);
+            comboBox1.DataSource = ds.Tables[0];
+            comboBox1.ValueMember = "Role";
+            conn.Close();
+/*
+ * -----------------------------Конец Поля------------------------------------
+ */
         }
-
-        public bool Login_check(string z)
+/*
+-----------------------Проверка Имени Пользователя----------------------------
+*/
+        public bool Login_check(string z) // Проверка логина
         {
             bool x;
 
-            myConnection.Open();
-            SqlDataAdapter sda = new SqlDataAdapter("Select Uname From Users Where Uname='" + z + "'", myConnection);
+            conn.Open();
+            MySqlDataAdapter sda = new MySqlDataAdapter("Select Uname From Users Where Uname='" + z + "'", conn); // Выбираем из базы Имя пользователся
             DataTable dt = new DataTable();
             sda.Fill(dt);
 
-            if (dt.Rows.Count == 1)
+            if (dt.Rows.Count == 1) // Если количество строк равно 1 то переходим в блок ошибка
                 x = false;
-            else
+            else                    // Иначе передаем переменной х значение истина
                 x = true;
 
-            myConnection.Close();
+            conn.Close();
             return x;
         }
-      public bool  Pass_check(string z)
+/*
+ * ----------------------Проверка Пароля---------------------------------------
+ */
+      public bool  Pass_check(string z)   
         {
             bool x;
-            if (textBox2.Text != textBox1.Text)
+            if (textBox2.Text != textBox1.Text && textBox2.Text.Length  >= 6)  // Если Пароль не совпадает с Логином и Длина пароля больше 6 символов то Истина
                 x = true;
             else
-                x = false;
+                x = false;                                                      // Иначе переходим в блок ошибки
             return x;
         }
+/*
+ * --------------------Событие Нажатие Кнопки Create Account------------------
+ */
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (Login_check(textBox1.Text) && Pass_check(textBox2.Text) && comboBox1 != null)
+
+
+
+            if (Login_check(textBox1.Text) && Pass_check(textBox2.Text) && comboBox1 != null)  // Если Имя пользователя Истино И НЕ равно null И Пароль Истина ТО
                 {
                 MessageBox.Show
                 (
@@ -144,16 +161,14 @@ namespace AIS
                                  MessageBoxOptions.DefaultDesktopOnly
                                  );
             }
+
+
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            myConnection.Open();
-            SqlDataAdapter sda = new SqlDataAdapter("Select Role From Users=", myConnection);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            comboBox1.DataSource = dt;
-            myConnection.Close();
+           
 
         }
     }

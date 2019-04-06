@@ -1,4 +1,4 @@
-﻿using System.Data.SqlClient;
+﻿using MySql.Data.MySqlClient;
 
 namespace AIS
 {
@@ -6,13 +6,14 @@ namespace AIS
     {
        public static string sconn = @"Data Source=NIXE-PC\SQLEXPRESS;Initial Catalog=AIS; Integrated Security=True; Connect Timeout=30; Encrypt=False; TrustServerCertificate=False; ApplicationIntent=ReadWrite; MultiSubnetFailover=False";
 
-        public static SqlConnection
-               GetDBConnection(string datasource, string database, string username, string password)
+        public static MySqlConnection
+               GetDBConnection(string host, int port, string database, string username, string password)
         {
-            string connString = @"Data Source=" + datasource + ";Initial Catalog="
-                        + database + ";Persist Security Info=True;User ID=" + username + ";Password=" + password;
+            // Connection String.
+            string connString = "Server=" + host + ";Database=" + database
+                + ";port=" + port + ";User Id=" + username + ";password=" + password;
 
-            SqlConnection conn = new SqlConnection(connString);
+            MySqlConnection conn = new MySqlConnection(connString);
             return conn;
         }
     }
