@@ -69,6 +69,7 @@ namespace AIS
                         if (dataGridView1.Rows[i].Cells[j].Value.ToString().Contains(Search_tacm.Text))
                         {
                             dataGridView1.Rows[i].Selected = true;
+                            textBox1.Text = dataGridView1.Rows[i].Cells[j].Value.ToString();
                             break;
                         }
             }
@@ -183,7 +184,7 @@ namespace AIS
         private void button2_Click(object sender, EventArgs e)
         {
             conn.Open();
-            MySqlCommand cmd = new MySqlCommand("Delete From Users Where Uname='" + Search_tacm.Text + "'", conn); // Содаем пользователя Имя + Пароль + Роль
+            MySqlCommand cmd = new MySqlCommand("Delete From Users Where Uname='" + textBox1.Text + "'", conn); // Удаляем пользователя
             cmd.ExecuteNonQuery();
             conn.Close();
             MessageBox.Show
