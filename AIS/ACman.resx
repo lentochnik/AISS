@@ -161,9 +161,6 @@
   <data name="&gt;&gt;Search_acm.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 13</value>
-  </data>
   <data name="Role.HeaderText" xml:space="preserve">
     <value>Role</value>
   </data>
@@ -339,6 +336,9 @@
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="button2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 20</value>
+  </data>
   <data name="comboBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>113, 135</value>
   </data>
@@ -378,8 +378,8 @@
   <data name="label2.Text" xml:space="preserve">
     <value>Password:</value>
   </data>
-  <data name="label3.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 13</value>
   </data>
   <data name="Search_tacm.Size" type="System.Drawing.Size, System.Drawing">
     <value>174, 20</value>
@@ -423,8 +423,8 @@
   <data name="&gt;&gt;Search_acm.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
-  <data name="button2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 20</value>
+  <data name="label3.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>ACman</value>

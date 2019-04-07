@@ -89,7 +89,8 @@ namespace AIS
             MySqlDataAdapter sda = new MySqlDataAdapter("SELECT Role FROM users", conn);
             DataSet ds = new DataSet();
             sda.Fill(ds);
-            comboBox1.DataSource = ds.Tables[0];
+            DataTable dt = ds.Tables[0].DefaultView.ToTable(true, "Role");
+            comboBox1.DataSource = dt;
             comboBox1.ValueMember = "Role";
             conn.Close();
 /*
@@ -139,6 +140,13 @@ namespace AIS
 
             if (Login_check(textBox1.Text) && Pass_check(textBox2.Text) && comboBox1 != null)  // Если Имя пользователя Истино И НЕ равно null И Пароль Истина ТО
                 {
+
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(@" Insert Into users
+                    (Uname, Pass, Role)Values ('" +textBox1.Text+ "','" +textBox2.Text+"','"+comboBox1.Text+"')", conn); // Содаем пользователя Имя + Пароль + Роль
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                
                 MessageBox.Show
                 (
                   "Ready",
@@ -151,15 +159,15 @@ namespace AIS
                 }
             else
             {
-                MessageBox.Show
-                                 (
-                                 "Invalid username or password",
-                                 "Error",
-                                 MessageBoxButtons.OK,
-                                 MessageBoxIcon.Error,
-                                 MessageBoxDefaultButton.Button1,
-                                 MessageBoxOptions.DefaultDesktopOnly
-                                 );
+               MessageBox.Show
+               (
+                "Invalid username or password",
+                "Error",
+                 MessageBoxButtons.OK,
+                 MessageBoxIcon.Error,
+                 MessageBoxDefaultButton.Button1,
+                 MessageBoxOptions.DefaultDesktopOnly
+                );
             }
 
 
@@ -170,6 +178,23 @@ namespace AIS
         {
            
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand("Delete From Users Where Uname='" + Search_tacm.Text + "'", conn); // Содаем пользователя Имя + Пароль + Роль
+            cmd.ExecuteNonQuery();
+            conn.Close();
+            MessageBox.Show
+                (
+                  "Ready",
+                  "Ready",
+                  MessageBoxButtons.OK,
+                  MessageBoxIcon.Information,
+                  MessageBoxDefaultButton.Button1,
+                  MessageBoxOptions.DefaultDesktopOnly
+                  );
         }
     }
 }
