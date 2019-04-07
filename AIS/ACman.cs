@@ -14,7 +14,7 @@ namespace AIS
     public partial class ACman : Form
     {
         MySqlConnection conn = Param.GetDBConnection();
-
+        string name;
         public ACman()
         {
             InitializeComponent();
@@ -58,7 +58,9 @@ namespace AIS
             foreach (string[] s in data)
                 dataGridView1.Rows.Add(s);
         }
-
+ /*
+  * ----------------------------------Поиск По таблице----------------------------
+  */
         private void Search_acm_Click(object sender, EventArgs e)
         {
             for (int i = 0; i < dataGridView1.RowCount; i++)
@@ -70,6 +72,7 @@ namespace AIS
                         {
                             dataGridView1.Rows[i].Selected = true;
                             textBox1.Text = dataGridView1.Rows[i].Cells[j].Value.ToString();
+                            name = textBox1.Text;
                             break;
                         }
             }
@@ -147,17 +150,20 @@ namespace AIS
                     (Uname, Pass, Role)Values ('" +textBox1.Text+ "','" +textBox2.Text+"','"+comboBox1.Text+"')", conn); // Содаем пользователя Имя + Пароль + Роль
                 cmd.ExecuteNonQuery();
                 conn.Close();
+                name = textBox1.Text;
                 
                 MessageBox.Show
                 (
-                  "Ready",
-                  "Ready",
+                  String.Format("Account " + name + " created"),
+                  "Success",
                   MessageBoxButtons.OK,
                   MessageBoxIcon.Information,
                   MessageBoxDefaultButton.Button1,
                   MessageBoxOptions.DefaultDesktopOnly
                   );
-                }
+                dataGridView1.Rows.Clear();
+                LoadData_Grid();
+            }
             else
             {
                MessageBox.Show
@@ -183,19 +189,40 @@ namespace AIS
 
         private void button2_Click(object sender, EventArgs e)
         {
-            conn.Open();
-            MySqlCommand cmd = new MySqlCommand("Delete From Users Where Uname='" + textBox1.Text + "'", conn); // Удаляем пользователя
-            cmd.ExecuteNonQuery();
-            conn.Close();
-            MessageBox.Show
+           
+            if (MessageBox.Show
                 (
-                  "Ready",
-                  "Ready",
+                  "Delete this account?",
+                  "Delete account",
+                  MessageBoxButtons.OKCancel,
+                  MessageBoxIcon.Information,
+                  MessageBoxDefaultButton.Button1,
+                  MessageBoxOptions.DefaultDesktopOnly
+                  ) == DialogResult.OK)
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("Delete From Users Where Uname='" + textBox1.Text + "'", conn); // Удаляем пользователя
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                MessageBox.Show
+                (String.Format("Account " +name+ " deleted"),
+
+                  "Success",
                   MessageBoxButtons.OK,
                   MessageBoxIcon.Information,
                   MessageBoxDefaultButton.Button1,
                   MessageBoxOptions.DefaultDesktopOnly
                   );
+                dataGridView1.Rows.Clear();
+                LoadData_Grid();
+            };
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            textBox1.Clear();
+            textBox2.Clear();
+
         }
     }
 }
