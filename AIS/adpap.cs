@@ -163,10 +163,15 @@ namespace AIS
                 }
                 catch
                 {
-                    DialogResult rezult = MessageBox.Show("Невозможно открыть выбранный файл",
-                    "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    DialogResult rezult = MessageBox.Show("Error, can not open this file!",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void adpap_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
