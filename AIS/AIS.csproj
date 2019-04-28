@@ -56,6 +56,12 @@
     <Compile Include="ACman.Designer.cs">
       <DependentUpon>ACman.cs</DependentUpon>
     </Compile>
+    <Compile Include="adpap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adpap.Designer.cs">
+      <DependentUpon>adpap.cs</DependentUpon>
+    </Compile>
     <Compile Include="AISS.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,11 +78,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Stor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stor.Designer.cs">
+      <DependentUpon>Stor.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="ACman.en.resx">
       <DependentUpon>ACman.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ACman.resx">
       <DependentUpon>ACman.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adpap.en.resx">
+      <DependentUpon>adpap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adpap.resx">
+      <DependentUpon>adpap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AISS.en.resx">
       <DependentUpon>AISS.cs</DependentUpon>
@@ -108,6 +126,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Data\img\errorimage.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

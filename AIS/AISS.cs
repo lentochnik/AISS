@@ -13,6 +13,7 @@ namespace AIS
     public partial class AISS : Form
     {
         string rl;  // переменная нужная для проверки
+        
 
         public AISS(string role)
         {
@@ -24,6 +25,7 @@ namespace AIS
             {
                 adminToolStripMenuItem.Enabled = false;
                 adminToolStripMenuItem.Visible = false;
+                
             }
             else
             {
@@ -40,37 +42,41 @@ namespace AIS
 
         }
 
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit(); // выход
-        }
 
         private void StLab_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void adminToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-         
-        }
 
-        private void menuStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        private void ToolStripStatusLabel_Click(object sender, EventArgs e)
         {
 
         }
+        
 
-        private void accountManagementToolStripMenuItem_Click(object sender, EventArgs e)
+        private void addPaymentToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            adpap adpay = new adpap();
+            adpay.MdiParent = this;
+            adpay.Show();
+        }
+
+        private void accountManagementToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             ACman aCman = new ACman();
             aCman.MdiParent = this;
             aCman.Show();
-            
         }
 
-        private void toolStripStatusLabel_Click(object sender, EventArgs e)
+        private void exitToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
+            Application.Exit(); // выход
+        }
 
+        private void AISS_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

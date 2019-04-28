@@ -71,7 +71,9 @@ namespace AIS
                         if (dataGridView1.Rows[i].Cells[j].Value.ToString().Contains(Search_tacm.Text))
                         {
                             dataGridView1.Rows[i].Selected = true;
-                            textBox1.Text = dataGridView1.Rows[i].Cells[j].Value.ToString();
+                            textBox1.Text = dataGridView1.Rows[i].Cells[0].Value.ToString();
+                            textBox2.Text = dataGridView1.Rows[i].Cells[1].Value.ToString();
+                            comboBox1.Text = dataGridView1.Rows[i].Cells[2].Value.ToString();
                             name = textBox1.Text;
                             break;
                         }
