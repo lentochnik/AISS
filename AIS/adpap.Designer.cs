@@ -251,6 +251,7 @@
             this.Controls.Add(this.textBox8);
             this.Controls.Add(this.payer_ammount);
             this.Name = "adpap";
+            this.Load += new System.EventHandler(this.adpap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

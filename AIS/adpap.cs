@@ -39,7 +39,25 @@ namespace AIS
                     payer_bic_bank.Text.Length >= 9 &&
                     payer_bank_accnumber.Text.Length >= 20)
                 {
-
+                    conn.Open();
+                    MySqlCommand cmd = new MySqlCommand(@" Insert Into pap
+                    (idNum, paydata, inn, kpp, payer, paymnum, bank, bic, bpaymnum, summ, mess, img)Values
+                    ('"
+                    + pay_number.Text + "','"
+                    + dateTimePicker1.Text + "','"
+                    + payer_inn.Text + "','"
+                    + payer_kpp.Text + "','"
+                    + payer_name.Text + "','"
+                    + payer_number.Text + "','"
+                    + payer_bank.Text + "','"
+                    + payer_bic_bank.Text + "','"
+                    + payer_bank_accnumber.Text + "','"
+                    + payer_ammount.Text + "','"
+                    + textBox8.Text + "','"
+                    + pictureBox1.Image +
+                    "')", conn); 
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
                 }
                 else
                 {
@@ -163,10 +181,15 @@ namespace AIS
                 }
                 catch
                 {
-                    DialogResult rezult = MessageBox.Show("Невозможно открыть выбранный файл",
-                    "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    DialogResult rezult = MessageBox.Show("Error, can not open this file!",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void adpap_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
