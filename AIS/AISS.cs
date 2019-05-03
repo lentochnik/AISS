@@ -78,5 +78,12 @@ namespace AIS
         {
             Application.Exit();
         }
+
+        private void clientAddToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Client_Info cinf = new Client_Info();
+            cinf.MdiParent = this;
+            cinf.Show();
+        }
     }
 }

@@ -40,8 +40,6 @@
             this.Cstreet = new System.Windows.Forms.TextBox();
             this.Cadrs2 = new System.Windows.Forms.TextBox();
             this.Cpcod = new System.Windows.Forms.TextBox();
-            this.Ctel = new System.Windows.Forms.TextBox();
-            this.Cfax = new System.Windows.Forms.TextBox();
             this.Clegform = new System.Windows.Forms.ComboBox();
             this.Ccountr = new System.Windows.Forms.ComboBox();
             this.Lab_Cname = new System.Windows.Forms.Label();
@@ -60,15 +58,14 @@
             this.Lab_Cpcod = new System.Windows.Forms.Label();
             this.Lab_Ctel = new System.Windows.Forms.Label();
             this.Lab_Cfax = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.Lab_Camm = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.Camm = new System.Windows.Forms.TextBox();
+            this.Lab_Ccur = new System.Windows.Forms.Label();
+            this.Ccur = new System.Windows.Forms.ComboBox();
             this.But_CIcancel = new System.Windows.Forms.Button();
             this.But_CIcreate = new System.Windows.Forms.Button();
-            this.But_CIuppdate = new System.Windows.Forms.Button();
             this.Lab_Cemail = new System.Windows.Forms.Label();
             this.Cemail = new System.Windows.Forms.TextBox();
+            this.Ctel = new System.Windows.Forms.MaskedTextBox();
+            this.Cfax = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // Cname
@@ -94,40 +91,48 @@
             // 
             // CCompname
             // 
-            this.CCompname.Location = new System.Drawing.Point(185, 53);
+            this.CCompname.Location = new System.Drawing.Point(83, 43);
             this.CCompname.Multiline = true;
             this.CCompname.Name = "CCompname";
             this.CCompname.Size = new System.Drawing.Size(392, 72);
             this.CCompname.TabIndex = 3;
+            this.CCompname.Visible = false;
             // 
             // Cclinum
             // 
             this.Cclinum.Enabled = false;
             this.Cclinum.Location = new System.Drawing.Point(616, 9);
             this.Cclinum.Name = "Cclinum";
-            this.Cclinum.Size = new System.Drawing.Size(179, 20);
+            this.Cclinum.Size = new System.Drawing.Size(140, 20);
             this.Cclinum.TabIndex = 4;
+            this.Cclinum.TextChanged += new System.EventHandler(this.Cclinum_TextChanged);
             // 
             // Cinn
             // 
             this.Cinn.Location = new System.Drawing.Point(79, 134);
+            this.Cinn.MaxLength = 12;
             this.Cinn.Name = "Cinn";
             this.Cinn.Size = new System.Drawing.Size(186, 20);
             this.Cinn.TabIndex = 5;
+            this.Cinn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Cinn_KeyPress);
             // 
             // Ckpp
             // 
             this.Ckpp.Location = new System.Drawing.Point(79, 160);
+            this.Ckpp.MaxLength = 9;
             this.Ckpp.Name = "Ckpp";
             this.Ckpp.Size = new System.Drawing.Size(186, 20);
             this.Ckpp.TabIndex = 6;
+            this.Ckpp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Ckpp_KeyPress);
             // 
             // Caccnum
             // 
             this.Caccnum.Location = new System.Drawing.Point(79, 186);
+            this.Caccnum.MaxLength = 20;
             this.Caccnum.Name = "Caccnum";
             this.Caccnum.Size = new System.Drawing.Size(186, 20);
             this.Caccnum.TabIndex = 7;
+            this.Caccnum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Caccnum_KeyPress);
             // 
             // Creg
             // 
@@ -158,20 +163,6 @@
             this.Cpcod.Size = new System.Drawing.Size(100, 20);
             this.Cpcod.TabIndex = 12;
             // 
-            // Ctel
-            // 
-            this.Ctel.Location = new System.Drawing.Point(79, 368);
-            this.Ctel.Name = "Ctel";
-            this.Ctel.Size = new System.Drawing.Size(100, 20);
-            this.Ctel.TabIndex = 13;
-            // 
-            // Cfax
-            // 
-            this.Cfax.Location = new System.Drawing.Point(240, 368);
-            this.Cfax.Name = "Cfax";
-            this.Cfax.Size = new System.Drawing.Size(100, 20);
-            this.Cfax.TabIndex = 14;
-            // 
             // Clegform
             // 
             this.Clegform.FormattingEnabled = true;
@@ -182,14 +173,152 @@
             this.Clegform.Name = "Clegform";
             this.Clegform.Size = new System.Drawing.Size(121, 21);
             this.Clegform.TabIndex = 16;
+            this.Clegform.SelectedIndexChanged += new System.EventHandler(this.Clegform_SelectedIndexChanged);
             // 
             // Ccountr
             // 
             this.Ccountr.FormattingEnabled = true;
+            this.Ccountr.Items.AddRange(new object[] {
+            "Abkhazia",
+            "Afghanistan",
+            "Albania",
+            "Algeria",
+            "Argentina",
+            "Armenia",
+            "Australia",
+            "Austria",
+            "Azerbaijan",
+            "Bahamas",
+            "Bahrain",
+            "Bangladesh",
+            "Belarus",
+            "Belgium",
+            "Bermuda Islands",
+            "Bolivia",
+            "Brazil",
+            "Bulgaria",
+            "Burundi",
+            "Cambodia",
+            "Cameroon",
+            "Canada",
+            "Chile",
+            "China",
+            "Colombia",
+            "Congo",
+            "Costa Rica",
+            "Cuba",
+            "Cyprus",
+            "Czech Republic",
+            "Denmark",
+            "Dominican Republic",
+            "Ecuador",
+            "Egypt",
+            "El Salvador",
+            "Estonia",
+            "Ethiopia",
+            "Finland",
+            "France",
+            "Georgia",
+            "Germany",
+            "Ghana",
+            "Gibraltar",
+            "United Kingdom",
+            "Greece",
+            "Guatemala",
+            "Guinea",
+            "Haiti",
+            "Hawaii",
+            "Honduras",
+            "Hong Kong",
+            "Hungary",
+            "Iceland",
+            "India",
+            "Indonesia",
+            "Iran",
+            "Iraq",
+            "Ireland",
+            "Israel",
+            "Italy",
+            "Ivory Coast",
+            "Jamaica",
+            "Japan",
+            "Kazakhstan",
+            "Kenya",
+            "Kuwait",
+            "Kyrgyzstan",
+            "Latvia",
+            "Lebanon",
+            "Liberia",
+            "Libya",
+            "Lithuania",
+            "Luxemburg",
+            "Madagascar",
+            "Malawi",
+            "Malaysia",
+            "Malta",
+            "Mexico",
+            "Moldova",
+            "Monaco",
+            "Mongolia",
+            "Morocco",
+            "Nepal",
+            "Netherlands",
+            "New Zeland",
+            "Nicaragua",
+            "Nigeria",
+            "North Korea",
+            "Norway",
+            "Oman",
+            "Pakistan",
+            "Panama",
+            "Papua New Guinea",
+            "Paraguay",
+            "Peru",
+            "Philippines",
+            "Poland",
+            "Portugal",
+            "Puerto Rico",
+            "Romania",
+            "Russian Federation",
+            "Rwanda",
+            "Saudi Arabia",
+            "Senegal",
+            "Sierra Leone",
+            "Singapore",
+            "Slovakia",
+            "Slovenia",
+            "South Africa",
+            "South Korea",
+            "South Ossetia",
+            "Spain",
+            "Sri Lanka",
+            "Sudan",
+            "Sweden",
+            "Switzerland",
+            "Syria",
+            "Taiwan",
+            "Tajikistan",
+            "Thailand",
+            "Togo",
+            "Tunisia",
+            "Turkey",
+            "Turkmenistan",
+            "Uganda",
+            "Ukraine",
+            "United Arab Emirates",
+            "United States of America",
+            "Uruguay",
+            "Uzbekistan",
+            "Venezuela",
+            "Yemen",
+            "Zaire",
+            "Zambia",
+            "Zimbabwe"});
             this.Ccountr.Location = new System.Drawing.Point(79, 245);
             this.Ccountr.Name = "Ccountr";
             this.Ccountr.Size = new System.Drawing.Size(121, 21);
             this.Ccountr.TabIndex = 17;
+            this.Ccountr.SelectedIndexChanged += new System.EventHandler(this.Ccountr_SelectedIndexChanged);
             // 
             // Lab_Cname
             // 
@@ -221,11 +350,12 @@
             // Lab_CCompname
             // 
             this.Lab_CCompname.AutoSize = true;
-            this.Lab_CCompname.Location = new System.Drawing.Point(340, 37);
+            this.Lab_CCompname.Location = new System.Drawing.Point(-1, 72);
             this.Lab_CCompname.Name = "Lab_CCompname";
             this.Lab_CCompname.Size = new System.Drawing.Size(83, 13);
             this.Lab_CCompname.TabIndex = 21;
             this.Lab_CCompname.Text = "Company name:";
+            this.Lab_CCompname.Visible = false;
             // 
             // Lab_Cclinum
             // 
@@ -335,43 +465,30 @@
             this.Lab_Cfax.TabIndex = 33;
             this.Lab_Cfax.Text = "Fax:";
             // 
-            // label17
+            // Lab_Ccur
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(541, 128);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(52, 13);
-            this.label17.TabIndex = 34;
-            this.label17.Text = "Currency:";
+            this.Lab_Ccur.AutoSize = true;
+            this.Lab_Ccur.Location = new System.Drawing.Point(286, 162);
+            this.Lab_Ccur.Name = "Lab_Ccur";
+            this.Lab_Ccur.Size = new System.Drawing.Size(52, 13);
+            this.Lab_Ccur.TabIndex = 34;
+            this.Lab_Ccur.Text = "Currency:";
             // 
-            // Lab_Camm
+            // Ccur
             // 
-            this.Lab_Camm.AutoSize = true;
-            this.Lab_Camm.Location = new System.Drawing.Point(538, 155);
-            this.Lab_Camm.Name = "Lab_Camm";
-            this.Lab_Camm.Size = new System.Drawing.Size(54, 13);
-            this.Lab_Camm.TabIndex = 35;
-            this.Lab_Camm.Text = "Ammount:";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(595, 125);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 21);
-            this.comboBox3.TabIndex = 38;
-            // 
-            // Camm
-            // 
-            this.Camm.Enabled = false;
-            this.Camm.Location = new System.Drawing.Point(595, 152);
-            this.Camm.Name = "Camm";
-            this.Camm.Size = new System.Drawing.Size(121, 20);
-            this.Camm.TabIndex = 15;
+            this.Ccur.FormattingEnabled = true;
+            this.Ccur.Items.AddRange(new object[] {
+            "RUB",
+            "USD",
+            "EUR"});
+            this.Ccur.Location = new System.Drawing.Point(344, 159);
+            this.Ccur.Name = "Ccur";
+            this.Ccur.Size = new System.Drawing.Size(80, 21);
+            this.Ccur.TabIndex = 38;
             // 
             // But_CIcancel
             // 
-            this.But_CIcancel.Location = new System.Drawing.Point(682, 380);
+            this.But_CIcancel.Location = new System.Drawing.Point(641, 380);
             this.But_CIcancel.Name = "But_CIcancel";
             this.But_CIcancel.Size = new System.Drawing.Size(75, 23);
             this.But_CIcancel.TabIndex = 39;
@@ -381,21 +498,13 @@
             // 
             // But_CIcreate
             // 
-            this.But_CIcreate.Location = new System.Drawing.Point(578, 380);
+            this.But_CIcreate.Location = new System.Drawing.Point(517, 380);
             this.But_CIcreate.Name = "But_CIcreate";
             this.But_CIcreate.Size = new System.Drawing.Size(75, 23);
             this.But_CIcreate.TabIndex = 40;
             this.But_CIcreate.Text = "Create";
             this.But_CIcreate.UseVisualStyleBackColor = true;
-            // 
-            // But_CIuppdate
-            // 
-            this.But_CIuppdate.Location = new System.Drawing.Point(486, 380);
-            this.But_CIuppdate.Name = "But_CIuppdate";
-            this.But_CIuppdate.Size = new System.Drawing.Size(75, 23);
-            this.But_CIuppdate.TabIndex = 41;
-            this.But_CIuppdate.Text = "Uppdate";
-            this.But_CIuppdate.UseVisualStyleBackColor = true;
+            this.But_CIcreate.Click += new System.EventHandler(this.But_CIcreate_Click);
             // 
             // Lab_Cemail
             // 
@@ -413,19 +522,36 @@
             this.Cemail.Size = new System.Drawing.Size(100, 20);
             this.Cemail.TabIndex = 43;
             // 
+            // Ctel
+            // 
+            this.Ctel.Location = new System.Drawing.Point(83, 368);
+            this.Ctel.Name = "Ctel";
+            this.Ctel.Size = new System.Drawing.Size(100, 20);
+            this.Ctel.TabIndex = 45;
+            this.Ctel.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.Ctel_MaskInputRejected);
+            this.Ctel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Ctel_KeyPress);
+            // 
+            // Cfax
+            // 
+            this.Cfax.Location = new System.Drawing.Point(238, 369);
+            this.Cfax.Name = "Cfax";
+            this.Cfax.Size = new System.Drawing.Size(100, 20);
+            this.Cfax.TabIndex = 46;
+            this.Cfax.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Cfax_KeyPress);
+            // 
             // Client_Info
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Cfax);
+            this.Controls.Add(this.Ctel);
             this.Controls.Add(this.Cemail);
             this.Controls.Add(this.Lab_Cemail);
-            this.Controls.Add(this.But_CIuppdate);
             this.Controls.Add(this.But_CIcreate);
             this.Controls.Add(this.But_CIcancel);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.Lab_Camm);
-            this.Controls.Add(this.label17);
+            this.Controls.Add(this.Ccur);
+            this.Controls.Add(this.Lab_Ccur);
             this.Controls.Add(this.Lab_Cfax);
             this.Controls.Add(this.Lab_Ctel);
             this.Controls.Add(this.Lab_Cpcod);
@@ -444,9 +570,6 @@
             this.Controls.Add(this.Lab_Cname);
             this.Controls.Add(this.Ccountr);
             this.Controls.Add(this.Clegform);
-            this.Controls.Add(this.Camm);
-            this.Controls.Add(this.Cfax);
-            this.Controls.Add(this.Ctel);
             this.Controls.Add(this.Cpcod);
             this.Controls.Add(this.Cadrs2);
             this.Controls.Add(this.Cstreet);
@@ -481,8 +604,6 @@
         private System.Windows.Forms.TextBox Cstreet;
         private System.Windows.Forms.TextBox Cadrs2;
         private System.Windows.Forms.TextBox Cpcod;
-        private System.Windows.Forms.TextBox Ctel;
-        private System.Windows.Forms.TextBox Cfax;
         private System.Windows.Forms.ComboBox Clegform;
         private System.Windows.Forms.ComboBox Ccountr;
         private System.Windows.Forms.Label Lab_Cname;
@@ -501,14 +622,13 @@
         private System.Windows.Forms.Label Lab_Cpcod;
         private System.Windows.Forms.Label Lab_Ctel;
         private System.Windows.Forms.Label Lab_Cfax;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label Lab_Camm;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.TextBox Camm;
+        private System.Windows.Forms.Label Lab_Ccur;
+        private System.Windows.Forms.ComboBox Ccur;
         private System.Windows.Forms.Button But_CIcancel;
         private System.Windows.Forms.Button But_CIcreate;
-        private System.Windows.Forms.Button But_CIuppdate;
         private System.Windows.Forms.Label Lab_Cemail;
         private System.Windows.Forms.TextBox Cemail;
+        private System.Windows.Forms.MaskedTextBox Ctel;
+        private System.Windows.Forms.MaskedTextBox Cfax;
     }
 }

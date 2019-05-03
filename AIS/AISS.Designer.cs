@@ -43,6 +43,7 @@
             this.accountManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configurationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clientAddToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -84,6 +85,7 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.clientAddToolStripMenuItem,
             this.addPaymentToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
@@ -126,6 +128,12 @@
             this.configurationToolStripMenuItem.Name = "configurationToolStripMenuItem";
             resources.ApplyResources(this.configurationToolStripMenuItem, "configurationToolStripMenuItem");
             // 
+            // clientAddToolStripMenuItem
+            // 
+            this.clientAddToolStripMenuItem.Name = "clientAddToolStripMenuItem";
+            resources.ApplyResources(this.clientAddToolStripMenuItem, "clientAddToolStripMenuItem");
+            this.clientAddToolStripMenuItem.Click += new System.EventHandler(this.clientAddToolStripMenuItem_Click);
+            // 
             // AISS
             // 
             resources.ApplyResources(this, "$this");
@@ -160,6 +168,7 @@
         private System.Windows.Forms.ToolStripMenuItem configurationToolStripMenuItem;
         internal System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
         internal System.Windows.Forms.StatusStrip statusStrip;
+        private System.Windows.Forms.ToolStripMenuItem clientAddToolStripMenuItem;
     }
 }
 
