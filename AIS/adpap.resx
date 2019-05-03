@@ -34376,7 +34376,7 @@
     <value>19</value>
   </data>
   <data name="lab_pay_number.Text" xml:space="preserve">
-    <value>Pya number:</value>
+    <value>Pay number:</value>
   </data>
   <data name="&gt;&gt;lab_pay_number.Name" xml:space="preserve">
     <value>lab_pay_number</value>
