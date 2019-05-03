@@ -44,6 +44,9 @@
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configurationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientAddToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inWorkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addInvoiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -77,6 +80,7 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
+            this.inWorkToolStripMenuItem,
             this.adminToolStripMenuItem,
             this.toolsToolStripMenuItem});
             resources.ApplyResources(this.menuStrip1, "menuStrip1");
@@ -134,6 +138,24 @@
             resources.ApplyResources(this.clientAddToolStripMenuItem, "clientAddToolStripMenuItem");
             this.clientAddToolStripMenuItem.Click += new System.EventHandler(this.clientAddToolStripMenuItem_Click);
             // 
+            // inWorkToolStripMenuItem
+            // 
+            this.inWorkToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.searchToolStripMenuItem,
+            this.addInvoiceToolStripMenuItem});
+            this.inWorkToolStripMenuItem.Name = "inWorkToolStripMenuItem";
+            resources.ApplyResources(this.inWorkToolStripMenuItem, "inWorkToolStripMenuItem");
+            // 
+            // addInvoiceToolStripMenuItem
+            // 
+            this.addInvoiceToolStripMenuItem.Name = "addInvoiceToolStripMenuItem";
+            resources.ApplyResources(this.addInvoiceToolStripMenuItem, "addInvoiceToolStripMenuItem");
+            // 
+            // searchToolStripMenuItem
+            // 
+            this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
+            resources.ApplyResources(this.searchToolStripMenuItem, "searchToolStripMenuItem");
+            // 
             // AISS
             // 
             resources.ApplyResources(this, "$this");
@@ -169,6 +191,9 @@
         internal System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
         internal System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.ToolStripMenuItem clientAddToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inWorkToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addInvoiceToolStripMenuItem;
     }
 }
 

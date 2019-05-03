@@ -74,6 +74,12 @@
     <Compile Include="Client Info.Designer.cs">
       <DependentUpon>Client Info.cs</DependentUpon>
     </Compile>
+    <Compile Include="conord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="conord.Designer.cs">
+      <DependentUpon>conord.cs</DependentUpon>
+    </Compile>
     <Compile Include="Data\Msqlc.cs" />
     <Compile Include="Data\Param.cs" />
     <Compile Include="Login.cs">
@@ -89,6 +95,12 @@
     </Compile>
     <Compile Include="Search.Designer.cs">
       <DependentUpon>Search.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sresult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sresult.Designer.cs">
+      <DependentUpon>Sresult.cs</DependentUpon>
     </Compile>
     <Compile Include="Stor.cs">
       <SubType>Form</SubType>
@@ -117,6 +129,9 @@
     <EmbeddedResource Include="Client Info.resx">
       <DependentUpon>Client Info.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="conord.resx">
+      <DependentUpon>conord.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -131,6 +146,9 @@
     </Compile>
     <EmbeddedResource Include="Search.resx">
       <DependentUpon>Search.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sresult.resx">
+      <DependentUpon>Sresult.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

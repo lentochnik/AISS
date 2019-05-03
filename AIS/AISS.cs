@@ -85,5 +85,10 @@ namespace AIS
             cinf.MdiParent = this;
             cinf.Show();
         }
+
+        private void searchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

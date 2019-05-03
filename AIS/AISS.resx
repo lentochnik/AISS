@@ -205,13 +205,13 @@
     <value>180, 22</value>
   </data>
   <data name="clientAddToolStripMenuItem.Text" xml:space="preserve">
-    <value>Client add</value>
+    <value>New client</value>
   </data>
   <data name="addPaymentToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>180, 22</value>
   </data>
   <data name="addPaymentToolStripMenuItem.Text" xml:space="preserve">
-    <value>Add Payment</value>
+    <value>New payment</value>
   </data>
   <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>180, 22</value>
@@ -224,6 +224,24 @@
   </data>
   <data name="fileToolStripMenuItem.Text" xml:space="preserve">
     <value>File</value>
+  </data>
+  <data name="searchToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="searchToolStripMenuItem.Text" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="addInvoiceToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="addInvoiceToolStripMenuItem.Text" xml:space="preserve">
+    <value>Add Invoice</value>
+  </data>
+  <data name="inWorkToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 20</value>
+  </data>
+  <data name="inWorkToolStripMenuItem.Text" xml:space="preserve">
+    <value>In work</value>
   </data>
   <data name="accountManagementToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>193, 22</value>
@@ -244,7 +262,7 @@
     <value>False</value>
   </data>
   <data name="configurationToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="configurationToolStripMenuItem.Text" xml:space="preserve">
     <value>Configuration</value>
@@ -358,6 +376,24 @@
     <value>clientAddToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;clientAddToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;inWorkToolStripMenuItem.Name" xml:space="preserve">
+    <value>inWorkToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;inWorkToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;addInvoiceToolStripMenuItem.Name" xml:space="preserve">
+    <value>addInvoiceToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;addInvoiceToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;searchToolStripMenuItem.Name" xml:space="preserve">
+    <value>searchToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;searchToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

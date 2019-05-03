@@ -36,7 +36,7 @@ namespace AIS
  
         private void button1_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         private void Clegform_Load(object sender, EventArgs e)
