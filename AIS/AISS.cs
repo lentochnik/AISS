@@ -90,5 +90,12 @@ namespace AIS
         {
 
         }
+
+        private void addInvoiceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            conord conr = new conord();
+            conr.MdiParent = this;
+            conr.Show();
+        }
     }
 }

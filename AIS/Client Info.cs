@@ -100,7 +100,7 @@ namespace AIS
                 {
                     conn.Open();
                     MySqlCommand cmd = new MySqlCommand(@" Insert Into clients
-                    (Id, name, sname, patr, company, inn, kpp, accountnum, region, street, adr1, postcod,
+                    (Id, name, sname, patr, company, inn, kpp, accountnum, country, region, street, adr1, postcod,
                      fax, email, tel, lform, curren, accounamoun)Values
                     ('"
                     + abc + "','"
@@ -111,6 +111,7 @@ namespace AIS
                     + Cinn.Text + "','"
                     + Ckpp.Text + "','"
                     + Caccnum.Text + "','"
+                    + Ccountr.Text + "','"
                     + Creg.Text + "','"
                     + Cstreet.Text + "','"
                     + Cadrs2.Text + "','"
