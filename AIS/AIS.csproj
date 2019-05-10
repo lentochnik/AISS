@@ -82,6 +82,12 @@
     </Compile>
     <Compile Include="Data\Msqlc.cs" />
     <Compile Include="Data\Param.cs" />
+    <Compile Include="Invoce.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Invoce.Designer.cs">
+      <DependentUpon>Invoce.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +138,12 @@
     <EmbeddedResource Include="conord.resx">
       <DependentUpon>conord.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Invoce.resx">
+      <DependentUpon>Invoce.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.en.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -163,9 +175,14 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Data\img\errorimage.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Res\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

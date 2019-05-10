@@ -101,7 +101,7 @@
             // Cclinum
             // 
             this.Cclinum.Enabled = false;
-            this.Cclinum.Location = new System.Drawing.Point(616, 9);
+            this.Cclinum.Location = new System.Drawing.Point(335, 4);
             this.Cclinum.Name = "Cclinum";
             this.Cclinum.Size = new System.Drawing.Size(140, 20);
             this.Cclinum.TabIndex = 4;
@@ -360,7 +360,7 @@
             // Lab_Cclinum
             // 
             this.Lab_Cclinum.AutoSize = true;
-            this.Lab_Cclinum.Location = new System.Drawing.Point(563, 12);
+            this.Lab_Cclinum.Location = new System.Drawing.Point(282, 7);
             this.Lab_Cclinum.Name = "Lab_Cclinum";
             this.Lab_Cclinum.Size = new System.Drawing.Size(50, 13);
             this.Lab_Cclinum.TabIndex = 22;
@@ -488,7 +488,7 @@
             // 
             // But_CIcancel
             // 
-            this.But_CIcancel.Location = new System.Drawing.Point(641, 380);
+            this.But_CIcancel.Location = new System.Drawing.Point(349, 404);
             this.But_CIcancel.Name = "But_CIcancel";
             this.But_CIcancel.Size = new System.Drawing.Size(75, 23);
             this.But_CIcancel.TabIndex = 39;
@@ -498,7 +498,7 @@
             // 
             // But_CIcreate
             // 
-            this.But_CIcreate.Location = new System.Drawing.Point(517, 380);
+            this.But_CIcreate.Location = new System.Drawing.Point(79, 404);
             this.But_CIcreate.Name = "But_CIcreate";
             this.But_CIcreate.Size = new System.Drawing.Size(75, 23);
             this.But_CIcreate.TabIndex = 40;
@@ -543,7 +543,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(487, 439);
+            this.ControlBox = false;
             this.Controls.Add(this.Cfax);
             this.Controls.Add(this.Ctel);
             this.Controls.Add(this.Cemail);
@@ -582,6 +583,7 @@
             this.Controls.Add(this.Csurname);
             this.Controls.Add(this.Cpatr);
             this.Controls.Add(this.Cname);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Client_Info";
             this.Text = "Client Info";
             this.Load += new System.EventHandler(this.Client_Info_Load);

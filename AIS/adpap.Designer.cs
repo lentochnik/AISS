@@ -250,7 +250,11 @@
             this.Controls.Add(this.pay_number);
             this.Controls.Add(this.textBox8);
             this.Controls.Add(this.payer_ammount);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "adpap";
+            this.ShowIcon = false;
             this.Load += new System.EventHandler(this.adpap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);

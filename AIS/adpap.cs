@@ -58,6 +58,7 @@ namespace AIS
                     "')", conn); 
                     cmd.ExecuteNonQuery();
                     conn.Close();
+                    this.Close();
                 }
                 else
                 {

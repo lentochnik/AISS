@@ -97,5 +97,12 @@ namespace AIS
             conr.MdiParent = this;
             conr.Show();
         }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            Invoce iv = new Invoce();
+                iv.MdiParent = this;
+                iv.Show();
+        }
     }
 }
