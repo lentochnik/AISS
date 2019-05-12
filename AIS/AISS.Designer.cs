@@ -44,6 +44,8 @@
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addInvoiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.addNewProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.strorageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.accountManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -119,7 +121,9 @@
             this.inWorkToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.searchToolStripMenuItem,
             this.addInvoiceToolStripMenuItem,
-            this.toolStripMenuItem2});
+            this.toolStripMenuItem2,
+            this.addNewProductToolStripMenuItem,
+            this.strorageToolStripMenuItem});
             this.inWorkToolStripMenuItem.Name = "inWorkToolStripMenuItem";
             resources.ApplyResources(this.inWorkToolStripMenuItem, "inWorkToolStripMenuItem");
             // 
@@ -139,6 +143,18 @@
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
             resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
+            // 
+            // addNewProductToolStripMenuItem
+            // 
+            this.addNewProductToolStripMenuItem.Name = "addNewProductToolStripMenuItem";
+            resources.ApplyResources(this.addNewProductToolStripMenuItem, "addNewProductToolStripMenuItem");
+            this.addNewProductToolStripMenuItem.Click += new System.EventHandler(this.addNewProductToolStripMenuItem_Click);
+            // 
+            // strorageToolStripMenuItem
+            // 
+            this.strorageToolStripMenuItem.Name = "strorageToolStripMenuItem";
+            resources.ApplyResources(this.strorageToolStripMenuItem, "strorageToolStripMenuItem");
+            this.strorageToolStripMenuItem.Click += new System.EventHandler(this.strorageToolStripMenuItem_Click);
             // 
             // adminToolStripMenuItem
             // 
@@ -209,6 +225,8 @@
         private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addInvoiceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem addNewProductToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem strorageToolStripMenuItem;
     }
 }
 

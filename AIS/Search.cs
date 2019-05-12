@@ -19,12 +19,18 @@ namespace AIS
             InitializeComponent();
         }
         MySqlConnection conn = Param.GetDBConnection();
-        string name, sname, patr;
-        private void Serchname (string a, string b, string c)
+        string name, sname, patr, company;
+
+        private void Search_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Serchname(string a, string b, string c, string d)
         {
 
             conn.Open();
-            MySqlDataAdapter sda = new MySqlDataAdapter("Select * From clients Where name= '" + a + "," + "' sname='" + b + ","+ "'patr='" + c + "' ", conn);
+            MySqlDataAdapter sda = new MySqlDataAdapter("Select * From clients Where name= '" + a + "," + "' sname='" + b + "," + "'patr='" + c + "," + "'company='" + d + "' ", conn);
             DataTable dt = new System.Data.DataTable();
             sda.Fill(dt);
             if (dt.Rows.Count == 1)
@@ -33,16 +39,42 @@ namespace AIS
                 a = dt.Rows[0][0].ToString();
                 b = dt.Rows[0][2].ToString();
                 c = dt.Rows[0][3].ToString();
-               if (b.Length != 0 || a.Length !=0 && c.Length != 0)
-               {
+                if (b.Length != 0 || d.Length != 0 || a.Length != 0 && c.Length != 0)
+                {
                     name = a;
                     sname = b;
                     patr = c;
-               }
+                    company = d;
+                }
 
             }
         conn.Close();
         }
+
+        //private void Serchname(string a, string b, string c, string d)
+        //{
+
+        //    conn.Open();
+        //    MySqlDataAdapter sda = new MySqlDataAdapter("Select * From clients Where name= '" + a + "," + "' sname='" + b + "," + "'patr='" + c + "," + "'company='" + d + "' ", conn);
+        //    DataTable dt = new System.Data.DataTable();
+        //    sda.Fill(dt);
+        //    if (dt.Rows.Count == 1)
+        //    {
+
+        //        a = dt.Rows[0][0].ToString();
+        //        b = dt.Rows[0][2].ToString();
+        //        c = dt.Rows[0][3].ToString();
+        //        d = dt.Rows[0][4].ToString();
+        //        if (b.Length != 0 || d.Length != 0 || a.Length != 0 && c.Length != 0)
+        //        {
+        //            name = a;
+        //            sname = b;
+        //            patr = c;
+        //        }
+
+        //    }
+        //    conn.Close();
+        //}
 
         private void But_searc_Click(object sender, EventArgs e)
         {

@@ -104,5 +104,19 @@ namespace AIS
                 iv.MdiParent = this;
                 iv.Show();
         }
+
+        private void addNewProductToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            add_product ap = new add_product();
+            ap.MdiParent = this;
+            ap.Show();
+        }
+
+        private void strorageToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Stor st = new Stor();
+            st.MdiParent = this;
+            st.Show();
+        }
     }
 }

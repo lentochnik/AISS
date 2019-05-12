@@ -187,8 +187,14 @@
             this.Controls.Add(this.ser_invoce);
             this.Controls.Add(this.ser_cname);
             this.Controls.Add(this.ser_name);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Search";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Text = "Search";
+            this.Load += new System.EventHandler(this.Search_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

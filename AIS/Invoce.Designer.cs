@@ -32,22 +32,22 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.fokud = new System.Windows.Forms.TextBox();
+            this.orgokpo = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.prokpo = new System.Windows.Forms.TextBox();
+            this.payokpo = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.clokpo = new System.Windows.Forms.TextBox();
+            this.bnum = new System.Windows.Forms.TextBox();
+            this.bdate = new System.Windows.Forms.TextBox();
+            this.prnum = new System.Windows.Forms.TextBox();
+            this.prdate = new System.Windows.Forms.TextBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -69,9 +69,9 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.num = new System.Windows.Forms.TextBox();
             this.textBox19 = new System.Windows.Forms.TextBox();
-            this.textBox20 = new System.Windows.Forms.TextBox();
+            this.invdate = new System.Windows.Forms.TextBox();
             this.textBox21 = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -155,6 +155,26 @@
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.button1 = new System.Windows.Forms.Button();
             this.gb1 = new System.Windows.Forms.GroupBox();
+            this.orname = new System.Windows.Forms.Label();
+            this.clname = new System.Windows.Forms.Label();
+            this.prname = new System.Windows.Forms.Label();
+            this.payname = new System.Windows.Forms.Label();
+            this.bas = new System.Windows.Forms.Label();
+            this.numt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tovar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.naimen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.okey = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.upak = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vodnom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mest = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.brutto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.netto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cena = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nds = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sumnds = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.summsnds = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -202,28 +222,28 @@
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // textBox2
+            // fokud
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Location = new System.Drawing.Point(1005, 66);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 3;
-            this.textBox2.Text = "0310001";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.fokud.BackColor = System.Drawing.SystemColors.Window;
+            this.fokud.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.fokud.Location = new System.Drawing.Point(1005, 66);
+            this.fokud.Name = "fokud";
+            this.fokud.Size = new System.Drawing.Size(100, 20);
+            this.fokud.TabIndex = 3;
+            this.fokud.Text = "0310001";
+            this.fokud.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.fokud.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
-            // textBox3
+            // orgokpo
             // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Location = new System.Drawing.Point(1005, 84);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 4;
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.orgokpo.BackColor = System.Drawing.SystemColors.Window;
+            this.orgokpo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.orgokpo.Location = new System.Drawing.Point(1005, 84);
+            this.orgokpo.Name = "orgokpo";
+            this.orgokpo.Size = new System.Drawing.Size(100, 20);
+            this.orgokpo.TabIndex = 4;
+            this.orgokpo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.orgokpo.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // textBox4
             // 
@@ -247,27 +267,27 @@
             this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
-            // textBox6
+            // prokpo
             // 
-            this.textBox6.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox6.Location = new System.Drawing.Point(1005, 159);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 7;
-            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
+            this.prokpo.BackColor = System.Drawing.SystemColors.Window;
+            this.prokpo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.prokpo.Location = new System.Drawing.Point(1005, 159);
+            this.prokpo.Name = "prokpo";
+            this.prokpo.Size = new System.Drawing.Size(100, 20);
+            this.prokpo.TabIndex = 7;
+            this.prokpo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.prokpo.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
-            // textBox7
+            // payokpo
             // 
-            this.textBox7.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox7.Location = new System.Drawing.Point(1005, 178);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 8;
-            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
+            this.payokpo.BackColor = System.Drawing.SystemColors.Window;
+            this.payokpo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.payokpo.Location = new System.Drawing.Point(1005, 178);
+            this.payokpo.Name = "payokpo";
+            this.payokpo.Size = new System.Drawing.Size(100, 20);
+            this.payokpo.TabIndex = 8;
+            this.payokpo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.payokpo.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
             // textBox8
             // 
@@ -324,64 +344,64 @@
             this.textBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox12.TextChanged += new System.EventHandler(this.textBox12_TextChanged);
             // 
-            // textBox13
+            // clokpo
             // 
-            this.textBox13.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox13.Location = new System.Drawing.Point(1005, 140);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(100, 20);
-            this.textBox13.TabIndex = 14;
-            this.textBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox13.TextChanged += new System.EventHandler(this.textBox13_TextChanged);
+            this.clokpo.BackColor = System.Drawing.SystemColors.Window;
+            this.clokpo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.clokpo.Location = new System.Drawing.Point(1005, 140);
+            this.clokpo.Name = "clokpo";
+            this.clokpo.Size = new System.Drawing.Size(100, 20);
+            this.clokpo.TabIndex = 14;
+            this.clokpo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.clokpo.TextChanged += new System.EventHandler(this.textBox13_TextChanged);
             // 
-            // textBox14
+            // bnum
             // 
-            this.textBox14.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox14.Location = new System.Drawing.Point(906, 197);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(100, 20);
-            this.textBox14.TabIndex = 15;
-            this.textBox14.Text = "номер";
-            this.textBox14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox14.TextChanged += new System.EventHandler(this.textBox14_TextChanged);
+            this.bnum.BackColor = System.Drawing.SystemColors.Window;
+            this.bnum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.bnum.Location = new System.Drawing.Point(906, 197);
+            this.bnum.Name = "bnum";
+            this.bnum.Size = new System.Drawing.Size(100, 20);
+            this.bnum.TabIndex = 15;
+            this.bnum.Text = "номер";
+            this.bnum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.bnum.TextChanged += new System.EventHandler(this.textBox14_TextChanged);
             // 
-            // textBox15
+            // bdate
             // 
-            this.textBox15.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox15.Location = new System.Drawing.Point(906, 216);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(100, 20);
-            this.textBox15.TabIndex = 16;
-            this.textBox15.Text = "дата";
-            this.textBox15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox15.TextChanged += new System.EventHandler(this.textBox15_TextChanged);
+            this.bdate.BackColor = System.Drawing.SystemColors.Window;
+            this.bdate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.bdate.Location = new System.Drawing.Point(906, 216);
+            this.bdate.Name = "bdate";
+            this.bdate.Size = new System.Drawing.Size(100, 20);
+            this.bdate.TabIndex = 16;
+            this.bdate.Text = "дата";
+            this.bdate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.bdate.TextChanged += new System.EventHandler(this.textBox15_TextChanged);
             // 
-            // textBox16
+            // prnum
             // 
-            this.textBox16.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox16.Location = new System.Drawing.Point(906, 235);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(100, 20);
-            this.textBox16.TabIndex = 17;
-            this.textBox16.Text = "номер";
-            this.textBox16.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox16.TextChanged += new System.EventHandler(this.textBox16_TextChanged);
+            this.prnum.BackColor = System.Drawing.SystemColors.Window;
+            this.prnum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.prnum.Location = new System.Drawing.Point(906, 235);
+            this.prnum.Name = "prnum";
+            this.prnum.Size = new System.Drawing.Size(100, 20);
+            this.prnum.TabIndex = 17;
+            this.prnum.Text = "номер";
+            this.prnum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.prnum.TextChanged += new System.EventHandler(this.textBox16_TextChanged);
             // 
-            // textBox17
+            // prdate
             // 
-            this.textBox17.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox17.Location = new System.Drawing.Point(906, 254);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(100, 20);
-            this.textBox17.TabIndex = 18;
-            this.textBox17.Text = "дата";
-            this.textBox17.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox17.TextChanged += new System.EventHandler(this.textBox17_TextChanged);
+            this.prdate.BackColor = System.Drawing.SystemColors.Window;
+            this.prdate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.prdate.Location = new System.Drawing.Point(906, 254);
+            this.prdate.Name = "prdate";
+            this.prdate.Size = new System.Drawing.Size(100, 20);
+            this.prdate.TabIndex = 18;
+            this.prdate.Text = "дата";
+            this.prdate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.prdate.TextChanged += new System.EventHandler(this.textBox17_TextChanged);
             // 
             // pictureBox3
             // 
@@ -631,14 +651,14 @@
             this.label17.Text = "(договор, заказ-наряд)";
             this.label17.Click += new System.EventHandler(this.label17_Click);
             // 
-            // textBox18
+            // num
             // 
-            this.textBox18.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox18.Location = new System.Drawing.Point(504, 273);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(114, 20);
-            this.textBox18.TabIndex = 40;
-            this.textBox18.TextChanged += new System.EventHandler(this.textBox18_TextChanged);
+            this.num.BackColor = System.Drawing.SystemColors.Window;
+            this.num.Location = new System.Drawing.Point(504, 273);
+            this.num.Name = "num";
+            this.num.Size = new System.Drawing.Size(114, 20);
+            this.num.TabIndex = 40;
+            this.num.TextChanged += new System.EventHandler(this.textBox18_TextChanged);
             // 
             // textBox19
             // 
@@ -651,14 +671,14 @@
             this.textBox19.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox19.TextChanged += new System.EventHandler(this.textBox19_TextChanged);
             // 
-            // textBox20
+            // invdate
             // 
-            this.textBox20.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox20.Location = new System.Drawing.Point(615, 273);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(114, 20);
-            this.textBox20.TabIndex = 42;
-            this.textBox20.TextChanged += new System.EventHandler(this.textBox20_TextChanged);
+            this.invdate.BackColor = System.Drawing.SystemColors.Window;
+            this.invdate.Location = new System.Drawing.Point(615, 273);
+            this.invdate.Name = "invdate";
+            this.invdate.Size = new System.Drawing.Size(114, 20);
+            this.invdate.TabIndex = 42;
+            this.invdate.TextChanged += new System.EventHandler(this.textBox20_TextChanged);
             // 
             // textBox21
             // 
@@ -1128,11 +1148,34 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.numt,
+            this.tovar,
+            this.code,
+            this.naimen,
+            this.okey,
+            this.upak,
+            this.vodnom,
+            this.mest,
+            this.brutto,
+            this.netto,
+            this.cena,
+            this.sum,
+            this.nds,
+            this.sumnds,
+            this.summsnds});
             this.dataGridView1.GridColor = System.Drawing.Color.White;
             this.dataGridView1.Location = new System.Drawing.Point(36, 408);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dataGridView1.RowTemplate.ReadOnly = true;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1069, 136);
             this.dataGridView1.TabIndex = 81;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -1604,6 +1647,11 @@
             // 
             // gb1
             // 
+            this.gb1.Controls.Add(this.bas);
+            this.gb1.Controls.Add(this.payname);
+            this.gb1.Controls.Add(this.prname);
+            this.gb1.Controls.Add(this.clname);
+            this.gb1.Controls.Add(this.orname);
             this.gb1.Controls.Add(this.label53);
             this.gb1.Controls.Add(this.label65);
             this.gb1.Controls.Add(this.label58);
@@ -1682,9 +1730,9 @@
             this.gb1.Controls.Add(this.label19);
             this.gb1.Controls.Add(this.label18);
             this.gb1.Controls.Add(this.textBox21);
-            this.gb1.Controls.Add(this.textBox20);
+            this.gb1.Controls.Add(this.invdate);
             this.gb1.Controls.Add(this.textBox19);
-            this.gb1.Controls.Add(this.textBox18);
+            this.gb1.Controls.Add(this.num);
             this.gb1.Controls.Add(this.label17);
             this.gb1.Controls.Add(this.label16);
             this.gb1.Controls.Add(this.label15);
@@ -1701,22 +1749,22 @@
             this.gb1.Controls.Add(this.label1);
             this.gb1.Controls.Add(this.pictureBox5);
             this.gb1.Controls.Add(this.pictureBox3);
-            this.gb1.Controls.Add(this.textBox17);
-            this.gb1.Controls.Add(this.textBox16);
-            this.gb1.Controls.Add(this.textBox15);
-            this.gb1.Controls.Add(this.textBox14);
-            this.gb1.Controls.Add(this.textBox13);
+            this.gb1.Controls.Add(this.prdate);
+            this.gb1.Controls.Add(this.prnum);
+            this.gb1.Controls.Add(this.bdate);
+            this.gb1.Controls.Add(this.bnum);
+            this.gb1.Controls.Add(this.clokpo);
             this.gb1.Controls.Add(this.textBox12);
             this.gb1.Controls.Add(this.textBox11);
             this.gb1.Controls.Add(this.textBox10);
             this.gb1.Controls.Add(this.textBox9);
             this.gb1.Controls.Add(this.textBox8);
-            this.gb1.Controls.Add(this.textBox7);
-            this.gb1.Controls.Add(this.textBox6);
+            this.gb1.Controls.Add(this.payokpo);
+            this.gb1.Controls.Add(this.prokpo);
             this.gb1.Controls.Add(this.textBox5);
             this.gb1.Controls.Add(this.textBox4);
-            this.gb1.Controls.Add(this.textBox3);
-            this.gb1.Controls.Add(this.textBox2);
+            this.gb1.Controls.Add(this.orgokpo);
+            this.gb1.Controls.Add(this.fokud);
             this.gb1.Controls.Add(this.textBox1);
             this.gb1.Controls.Add(this.pictureBox2);
             this.gb1.Controls.Add(this.pictureBox4);
@@ -1732,6 +1780,161 @@
             this.gb1.TabIndex = 129;
             this.gb1.TabStop = false;
             this.gb1.Enter += new System.EventHandler(this.gb1_Enter);
+            // 
+            // orname
+            // 
+            this.orname.AutoSize = true;
+            this.orname.Location = new System.Drawing.Point(71, 87);
+            this.orname.Name = "orname";
+            this.orname.Size = new System.Drawing.Size(41, 13);
+            this.orname.TabIndex = 129;
+            this.orname.Text = "label54";
+            // 
+            // clname
+            // 
+            this.clname.AutoSize = true;
+            this.clname.BackColor = System.Drawing.Color.White;
+            this.clname.Location = new System.Drawing.Point(134, 143);
+            this.clname.Name = "clname";
+            this.clname.Size = new System.Drawing.Size(41, 13);
+            this.clname.TabIndex = 130;
+            this.clname.Text = "label55";
+            // 
+            // prname
+            // 
+            this.prname.AutoSize = true;
+            this.prname.Location = new System.Drawing.Point(134, 162);
+            this.prname.Name = "prname";
+            this.prname.Size = new System.Drawing.Size(41, 13);
+            this.prname.TabIndex = 131;
+            this.prname.Text = "label56";
+            // 
+            // payname
+            // 
+            this.payname.AutoSize = true;
+            this.payname.Location = new System.Drawing.Point(134, 183);
+            this.payname.Name = "payname";
+            this.payname.Size = new System.Drawing.Size(41, 13);
+            this.payname.TabIndex = 132;
+            this.payname.Text = "label57";
+            this.payname.Click += new System.EventHandler(this.label57_Click);
+            // 
+            // bas
+            // 
+            this.bas.AutoSize = true;
+            this.bas.Location = new System.Drawing.Point(509, 222);
+            this.bas.Name = "bas";
+            this.bas.Size = new System.Drawing.Size(41, 13);
+            this.bas.TabIndex = 133;
+            this.bas.Text = "label59";
+            this.bas.Click += new System.EventHandler(this.label59_Click);
+            // 
+            // numt
+            // 
+            this.numt.HeaderText = "numt";
+            this.numt.MaxInputLength = 10;
+            this.numt.Name = "numt";
+            this.numt.ReadOnly = true;
+            this.numt.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.numt.Width = 27;
+            // 
+            // tovar
+            // 
+            this.tovar.HeaderText = "tovar";
+            this.tovar.Name = "tovar";
+            this.tovar.ReadOnly = true;
+            this.tovar.Width = 309;
+            // 
+            // code
+            // 
+            this.code.HeaderText = "code";
+            this.code.Name = "code";
+            this.code.ReadOnly = true;
+            this.code.Width = 28;
+            // 
+            // naimen
+            // 
+            this.naimen.HeaderText = "naimen";
+            this.naimen.Name = "naimen";
+            this.naimen.ReadOnly = true;
+            this.naimen.Width = 47;
+            // 
+            // okey
+            // 
+            this.okey.HeaderText = "okey";
+            this.okey.Name = "okey";
+            this.okey.ReadOnly = true;
+            this.okey.Width = 35;
+            // 
+            // upak
+            // 
+            this.upak.HeaderText = "upak";
+            this.upak.Name = "upak";
+            this.upak.ReadOnly = true;
+            this.upak.Width = 28;
+            // 
+            // vodnom
+            // 
+            this.vodnom.HeaderText = "vodnom";
+            this.vodnom.Name = "vodnom";
+            this.vodnom.ReadOnly = true;
+            this.vodnom.Width = 42;
+            // 
+            // mest
+            // 
+            this.mest.HeaderText = "mest";
+            this.mest.Name = "mest";
+            this.mest.ReadOnly = true;
+            this.mest.Width = 35;
+            // 
+            // brutto
+            // 
+            this.brutto.HeaderText = "brutto";
+            this.brutto.Name = "brutto";
+            this.brutto.ReadOnly = true;
+            this.brutto.Width = 30;
+            // 
+            // netto
+            // 
+            this.netto.HeaderText = "netto";
+            this.netto.Name = "netto";
+            this.netto.ReadOnly = true;
+            this.netto.Width = 46;
+            // 
+            // cena
+            // 
+            this.cena.HeaderText = "cena";
+            this.cena.Name = "cena";
+            this.cena.ReadOnly = true;
+            this.cena.Width = 78;
+            // 
+            // sum
+            // 
+            this.sum.HeaderText = "sum";
+            this.sum.Name = "sum";
+            this.sum.ReadOnly = true;
+            this.sum.Width = 90;
+            // 
+            // nds
+            // 
+            this.nds.HeaderText = "nds";
+            this.nds.Name = "nds";
+            this.nds.ReadOnly = true;
+            this.nds.Width = 58;
+            // 
+            // sumnds
+            // 
+            this.sumnds.HeaderText = "sumnds";
+            this.sumnds.Name = "sumnds";
+            this.sumnds.ReadOnly = true;
+            this.sumnds.Width = 90;
+            // 
+            // summsnds
+            // 
+            this.summsnds.HeaderText = "summsnds";
+            this.summsnds.Name = "summsnds";
+            this.summsnds.ReadOnly = true;
+            this.summsnds.Width = 126;
             // 
             // Invoce
             // 
@@ -1767,22 +1970,22 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox fokud;
+        private System.Windows.Forms.TextBox orgokpo;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox prokpo;
+        private System.Windows.Forms.TextBox payokpo;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.TextBox textBox17;
+        private System.Windows.Forms.TextBox clokpo;
+        private System.Windows.Forms.TextBox bnum;
+        private System.Windows.Forms.TextBox bdate;
+        private System.Windows.Forms.TextBox prnum;
+        private System.Windows.Forms.TextBox prdate;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
@@ -1804,9 +2007,9 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox18;
+        private System.Windows.Forms.TextBox num;
         private System.Windows.Forms.TextBox textBox19;
-        private System.Windows.Forms.TextBox textBox20;
+        private System.Windows.Forms.TextBox invdate;
         private System.Windows.Forms.TextBox textBox21;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
@@ -1890,5 +2093,25 @@
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox gb1;
+        private System.Windows.Forms.Label bas;
+        private System.Windows.Forms.Label payname;
+        private System.Windows.Forms.Label prname;
+        private System.Windows.Forms.Label clname;
+        private System.Windows.Forms.Label orname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tovar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn code;
+        private System.Windows.Forms.DataGridViewTextBoxColumn naimen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn okey;
+        private System.Windows.Forms.DataGridViewTextBoxColumn upak;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vodnom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mest;
+        private System.Windows.Forms.DataGridViewTextBoxColumn brutto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn netto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cena;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nds;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sumnds;
+        private System.Windows.Forms.DataGridViewTextBoxColumn summsnds;
     }
 }

@@ -56,6 +56,12 @@
     <Compile Include="ACman.Designer.cs">
       <DependentUpon>ACman.cs</DependentUpon>
     </Compile>
+    <Compile Include="add product.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="add product.Designer.cs">
+      <DependentUpon>add product.cs</DependentUpon>
+    </Compile>
     <Compile Include="adpap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,9 @@
     <EmbeddedResource Include="ACman.resx">
       <DependentUpon>ACman.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="add product.resx">
+      <DependentUpon>add product.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="adpap.en.resx">
       <DependentUpon>adpap.cs</DependentUpon>
     </EmbeddedResource>
@@ -161,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Sresult.resx">
       <DependentUpon>Sresult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stor.resx">
+      <DependentUpon>Stor.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -18,6 +18,7 @@ namespace AIS
             InitializeComponent();
             SetReadonlyControls(gb1.Controls);
             printDocument1.DefaultPageSettings.Landscape = true;
+            dataGridView1.ColumnHeadersVisible = false;
 
 
         }
@@ -706,6 +707,16 @@ namespace AIS
         }
 
         private void Invoce_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label59_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label57_Click(object sender, EventArgs e)
         {
 
         }
