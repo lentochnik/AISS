@@ -77,7 +77,7 @@ namespace AIS
                         cmd.Parameters["@bank"].Value = payer_bank.Text;
                         cmd.Parameters["@bic"].Value = payer_bic_bank.Text;
                         cmd.Parameters["@bpaymnum"].Value = payer_bank_accnumber.Text;
-                        cmd.Parameters["@summ"].Value = payer_ammount.Text;
+                        cmd.Parameters["@summ"].Value = Convert(payer_ammount.Text);
                         cmd.Parameters["@mess"].Value = textBox8.Text;
                         cmd.Parameters["@img"].Value = ImageData;
                         conn.Open();
@@ -203,16 +203,18 @@ namespace AIS
                 }
             }
 
-            private void payer_ammount_KeyPress(object sender, KeyPressEventArgs e)
+        public object Convert(object value)
+        {
+            return value.ToString().Replace(",", ".");
+        }
+
+        private void payer_ammount_KeyPress(object sender, KeyPressEventArgs e)
             {
-                char num = e.KeyChar;
-                if (!Char.IsDigit(num))
+            if (!(Char.IsDigit(e.KeyChar)) && !((e.KeyChar == ',') && (payer_ammount.Text.IndexOf(",") == -1) && (payer_ammount.Text.Length != 0))) if (e.KeyChar != (char)Keys.Back)
                 {
                     e.Handled = true;
                 }
-            }
-
-            Bitmap image; //Bitmap для открываемого изображения
+        }
 
             private void payer_addscan_Click(object sender, EventArgs e)
             {

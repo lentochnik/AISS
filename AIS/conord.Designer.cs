@@ -338,16 +338,20 @@
             // Ordnum
             // 
             this.Ordnum.Location = new System.Drawing.Point(794, 53);
+            this.Ordnum.MaxLength = 5;
             this.Ordnum.Name = "Ordnum";
             this.Ordnum.Size = new System.Drawing.Size(100, 20);
             this.Ordnum.TabIndex = 30;
+            this.Ordnum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Ordnum_KeyPress);
             // 
             // Clnum
             // 
             this.Clnum.Location = new System.Drawing.Point(787, 17);
+            this.Clnum.MaxLength = 16;
             this.Clnum.Name = "Clnum";
             this.Clnum.Size = new System.Drawing.Size(107, 20);
             this.Clnum.TabIndex = 31;
+            this.Clnum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Clnum_KeyPress);
             // 
             // But_Search
             // 
@@ -532,6 +536,7 @@
             this.Name = "conord";
             this.ShowIcon = false;
             this.Text = "conord";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.conord_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

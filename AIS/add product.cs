@@ -27,7 +27,6 @@ namespace AIS
             this.Close();
         }
 
-        Image data;
         string imname;
 
         private void button1_Click(object sender, EventArgs e)
@@ -46,7 +45,7 @@ namespace AIS
                 ImageData = br.ReadBytes((int)fs.Length);
                 br.Close();
                 fs.Close();
-                string CmdString = "INSERT INTO stor (product, quantity, price, nds, foto)Values(@prod, @quantity, @price, @nds, @foto)";
+                string CmdString = "Insert Into stor (product, quantity, price, nds, foto)Values(@prod, @quantity, @price, @nds, @foto)";
                 cmd = new MySqlCommand(CmdString, conn);
                 cmd.Parameters.Add("@prod", MySqlDbType.VarChar, 255);
                 cmd.Parameters.Add("@quantity", MySqlDbType.Int32, 11);
@@ -55,13 +54,17 @@ namespace AIS
                 cmd.Parameters.Add("@foto", MySqlDbType.Blob);
                 cmd.Parameters["@prod"].Value = textBox1.Text;
                 cmd.Parameters["@quantity"].Value = textBox2.Text;
-                cmd.Parameters["@price"].Value = textBox3.Text;
+                cmd.Parameters["@price"].Value = Convert(textBox3.Text);
                 cmd.Parameters["@nds"].Value = comboBox1.Text;
                 cmd.Parameters["@foto"].Value = ImageData;
                 conn.Open();
                 int RowsAffected = cmd.ExecuteNonQuery();
+                Stor st = new Stor();
+                st.update_data();
+
                 if (RowsAffected > 0)
                 {
+
                     conn.Close();
                     this.Close();
                     
@@ -108,6 +111,15 @@ namespace AIS
                     e.Handled = true;
                 }
 
+        }
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char num = e.KeyChar;
+            if (!Char.IsDigit(num))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

@@ -18,8 +18,8 @@ namespace AIS
         public AISS(string role)
         {
             InitializeComponent();
-            StLab.Text = role; 
             rl = role;
+            StLab.Text = role; 
 
             if (rl != "admin") // проверяем роль
             {
@@ -105,18 +105,18 @@ namespace AIS
                 iv.Show();
         }
 
-        private void addNewProductToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            add_product ap = new add_product();
-            ap.MdiParent = this;
-            ap.Show();
-        }
-
         private void strorageToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Stor st = new Stor();
             st.MdiParent = this;
             st.Show();
+        }
+
+        private void searchToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Search srt = new Search();
+            srt.MdiParent = this;
+            srt.Show();
         }
     }
 }

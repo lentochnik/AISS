@@ -21,6 +21,14 @@ namespace AIS
         {
             InitializeComponent();
             dataGridView1.ColumnHeadersVisible = false;
+            update_data();
+
+        }
+
+
+        public void update_data()
+        {
+        
 
             conn.Open();
             MySqlCommand cmd = new MySqlCommand("Select * From stor", conn);
@@ -29,10 +37,14 @@ namespace AIS
             da.Fill(dt);
 
 
+           // dataGridView1.Rows.Clear();
+            dataGridView1.Refresh();
 
             for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                dataGridView1.Rows.Add();
+            { if (dataGridView1.Rows.Count < dt.Rows.Count)
+                {
+                    dataGridView1.Rows.Add();
+                }
                 for (int j = 0; j < dt.Columns.Count - 1; j++)
                 {
 
@@ -47,9 +59,7 @@ namespace AIS
             conn.Close();
 
         }
-
-
-
+    
 
 
 
@@ -64,18 +74,22 @@ namespace AIS
         {
 
         }
-
+        int a;
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+            if (dataGridView1.Rows.Count != 0)
             {
-                textBox1.Text = row.Cells[0].Value.ToString();
-                textBox2.Text = row.Cells[1].Value.ToString();
-                textBox3.Text = row.Cells[2].Value.ToString();
-                textBox4.Text = row.Cells[3].Value.ToString();
-                textBox5.Text = row.Cells[4].Value.ToString();
-            }
+                foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+                {
 
+                    textBox1.Text = row.Cells[0].Value.ToString();
+                    textBox2.Text = row.Cells[1].Value.ToString();
+                    textBox3.Text = row.Cells[2].Value.ToString();
+                    textBox4.Text = row.Cells[3].Value.ToString();
+                    comboBox1.Text = row.Cells[4].Value.ToString();
+                    
+                }
+            }
             conn.Open();
             MySqlCommand cmd = new MySqlCommand("Select * From stor Where idStor=" + textBox1.Text, conn);
             MySqlDataAdapter da = new MySqlDataAdapter(cmd);
@@ -98,5 +112,56 @@ namespace AIS
             conn.Close();
         }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            add_product ap = new add_product();
+            ap.MdiParent = this.MdiParent;
+            ap.Show();
+        
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            update_data();
+        }
+
+        public object Convert(object value)
+        {
+            return value.ToString().Replace(",", ".");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand("Update stor Set product='" + textBox2.Text + "', quantity='" + textBox3.Text + "', price='" +Convert(textBox4.Text) +
+                "', nds='" + Convert(comboBox1.Text) + "' Where idStor='" + int.Parse(textBox1.Text) + "'", conn);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+            update_data();
+        }
+
+        private void textBox4_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(Char.IsDigit(e.KeyChar)) && !((e.KeyChar == ',') && (textBox4.Text.IndexOf(",") == -1) && (textBox4.Text.Length != 0))) if (e.KeyChar != (char)Keys.Back)
+                {
+                    e.Handled = true;
+                }
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand("Delete From stor Where idStor = '" + int.Parse(textBox1.Text) + "'", conn);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+
+           
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

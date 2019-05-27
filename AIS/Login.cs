@@ -18,8 +18,11 @@ namespace AIS
         public Login()
         {
             InitializeComponent();
+            button1.BackgroundImage = AIS.Properties.Resources.settings1;
+            button1.BackgroundImageLayout = ImageLayout.Center;
+            button1.BackgroundImageLayout = ImageLayout.Stretch;
         }
-
+        
         MySqlConnection conn = Param.GetDBConnection();
 
         private void Form1_Load(object sender, EventArgs e)
@@ -68,6 +71,13 @@ namespace AIS
             conn.Close();
         }
 
-      
+        
+
+            
+            private void button1_Click(object sender, EventArgs e)
+        {
+            Settings settings = new Settings();
+            settings.Show();
+        }
     }
 }

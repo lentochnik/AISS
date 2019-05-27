@@ -255,12 +255,6 @@
   <data name="toolStripMenuItem2.Text" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="addNewProductToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 22</value>
-  </data>
-  <data name="addNewProductToolStripMenuItem.Text" xml:space="preserve">
-    <value>Add new product</value>
-  </data>
   <data name="strorageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>174, 22</value>
   </data>
@@ -409,12 +403,6 @@
     <value>toolStripMenuItem2</value>
   </data>
   <data name="&gt;&gt;toolStripMenuItem2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;addNewProductToolStripMenuItem.Name" xml:space="preserve">
-    <value>addNewProductToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;addNewProductToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;strorageToolStripMenuItem.Name" xml:space="preserve">
