@@ -27,6 +27,11 @@ namespace AIS
         }
         string strcmd;
 
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void Serchname(string a, string b, string c, string d)
         {
 
@@ -88,31 +93,6 @@ namespace AIS
             }
         }
 
-        //private void Serchname(string a, string b, string c, string d)
-        //{
-
-        //    conn.Open();
-        //    MySqlDataAdapter sda = new MySqlDataAdapter("Select * From clients Where name= '" + a + "," + "' sname='" + b + "," + "'patr='" + c + "," + "'company='" + d + "' ", conn);
-        //    DataTable dt = new System.Data.DataTable();
-        //    sda.Fill(dt);
-        //    if (dt.Rows.Count == 1)
-        //    {
-
-        //        a = dt.Rows[0][0].ToString();
-        //        b = dt.Rows[0][2].ToString();
-        //        c = dt.Rows[0][3].ToString();
-        //        d = dt.Rows[0][4].ToString();
-        //        if (b.Length != 0 || d.Length != 0 || a.Length != 0 && c.Length != 0)
-        //        {
-        //            name = a;
-        //            sname = b;
-        //            patr = c;
-        //        }
-
-        //    }
-        //    conn.Close();
-        //}
-
         private void serccomp(string name, string sname, string patr, string company)
         {
 
@@ -126,8 +106,6 @@ namespace AIS
         {
             if (ser_name.Text.Length != 0 && textBox1.Text.Length != 0 && textBox2.Text.Length !=0 || ser_cname.Text.Length != 0)
             {
-                
-                //    "Select * From clients Where name='" + a + "' and" + " sname='" + b + "', Or " + " patr='" + c + "', Or" + " company='" + d + "'"
                 Serchname(ser_name.Text, textBox1.Text, textBox2.Text, ser_cname.Text);
             }
         }

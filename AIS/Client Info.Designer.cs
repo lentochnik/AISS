@@ -585,7 +585,7 @@
             this.Controls.Add(this.Cname);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Client_Info";
-            this.Text = "Client Info";
+            this.Text = "New client";
             this.Load += new System.EventHandler(this.Client_Info_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

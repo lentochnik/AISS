@@ -165,6 +165,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(192, 199);
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // textBox1
             // 
@@ -287,7 +288,7 @@
             this.Name = "Stor";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.Text = "Stor";
+            this.Text = "Store";
             this.Load += new System.EventHandler(this.Stor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

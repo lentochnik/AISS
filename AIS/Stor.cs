@@ -35,9 +35,6 @@ namespace AIS
             MySqlDataAdapter da = new MySqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
-
-
-           // dataGridView1.Rows.Clear();
             dataGridView1.Refresh();
 
             for (int i = 0; i < dt.Rows.Count; i++)
@@ -74,7 +71,7 @@ namespace AIS
         {
 
         }
-        int a;
+
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
             if (dataGridView1.Rows.Count != 0)
@@ -160,6 +157,11 @@ namespace AIS
         }
 
         private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }

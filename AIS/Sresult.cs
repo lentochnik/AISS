@@ -19,6 +19,7 @@ namespace AIS
         public Sresult(string name, string sname, string patr, string company)
         {
             InitializeComponent();
+
             string n = name;
             string s = sname;
             string p = patr;
@@ -42,7 +43,7 @@ namespace AIS
                     textBox5.Text = dt1.Rows[0][5].ToString();
                     textBox6.Text = dt1.Rows[0][6].ToString();
                     textBox7.Text = dt1.Rows[0][7].ToString();
-                    textBox8.Text = dt1.Rows[0][12].ToString() + "\r\n" + dt1.Rows[0][9].ToString() + ",\r\n" + dt1.Rows[0][10].ToString() + ", " + dt1.Rows[0][11].ToString() + ",\r\n" + dt1.Rows[0][8].ToString();
+                    textBox8.Text = dt1.Rows[0][12].ToString() + "\r\n" + dt1.Rows[0][10].ToString() + ", " + dt1.Rows[0][11].ToString() + ",\r\n" + dt1.Rows[0][9].ToString() + ",\r\n" + dt1.Rows[0][8].ToString();
                     label13.Text = dt1.Rows[0][18].ToString();
                     label14.Text = dt1.Rows[0][17].ToString();
                 }
@@ -74,11 +75,147 @@ namespace AIS
 
                 }
             }
+            if (Canum.Text.Length > 0)
+            {
+                conn.Open();
+
+                MySqlCommand cmd = new MySqlCommand("Select * From pap Where idclient= '" + Canum.Text + "'", conn);
+                MySqlDataReader dr = cmd.ExecuteReader();
+                DataTable dt = new DataTable();
+                dt.Load(dr);
+                if (dt.Rows.Count > 0)
+                {
+                    for (int i = 0; i < dt.Columns.Count - 2; i++)
+                    {
+                        dataGridView3.Columns.Add(dt.Columns[i].Caption, dt.Columns[i].Caption);
+                    }
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        if (dataGridView3.Rows.Count < dt.Rows.Count)
+                        {
+                            dataGridView3.Rows.Add();
+                        }
+                        for (int j = 0; j < dt.Columns.Count - 2; j++)
+                        {
+
+                            dataGridView3.Rows[i].Cells[j].Value = dt.Rows[i][j].ToString();
+                        }
+                    }
+
+                    conn.Close();
+
+                }
+
+            }
+
+            if (Canum.Text.Length > 0)
+            {
+                conn.Open();
+
+                MySqlCommand cmd = new MySqlCommand("Select * From orders Where idclient= '" + Canum.Text + "'", conn);
+                MySqlDataReader dr = cmd.ExecuteReader();
+                DataTable dt = new DataTable();
+                dt.Load(dr);
+                if (dt.Rows.Count > 0)
+                {
+                    for (int i = 0; i < dt.Columns.Count - 1; i++)
+                    {
+                        dataGridView1.Columns.Add(dt.Columns[i].Caption, dt.Columns[i].Caption);
+                    }
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        if (dataGridView1.Rows.Count < dt.Rows.Count)
+                        {
+                            dataGridView1.Rows.Add();
+                        }
+                        for (int j = 0; j < dt.Columns.Count - 1; j++)
+                        {
+
+                            dataGridView1.Rows[i].Cells[j].Value = dt.Rows[i][j].ToString();
+                        }
+                    }
+
+                   
+
+                }
+                conn.Close();
+            }
+
+            if (Canum.Text.Length > 0)
+            {
+                conn.Open();
+
+                MySqlCommand cmd = new MySqlCommand("Select * From invoce Where idclient= '" + Canum.Text + "'", conn);
+                MySqlDataReader dr = cmd.ExecuteReader();
+                DataTable dt = new DataTable();
+                dt.Load(dr);
+                if (dt.Rows.Count > 0)
+                {
+                    for (int i = 0; i < dt.Columns.Count - 1; i++)
+                    {
+                        dataGridView2.Columns.Add(dt.Columns[i].Caption, dt.Columns[i].Caption);
+                    }
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        if (dataGridView2.Rows.Count < dt.Rows.Count)
+                        {
+                            dataGridView2.Rows.Add();
+                        }
+                        for (int j = 0; j < dt.Columns.Count - 1; j++)
+                        {
+
+                            dataGridView2.Rows[i].Cells[j].Value = dt.Rows[i][j].ToString();
+                        }
+                    }
+
+                    
+
+                }
+                conn.Close();
+
+            }
+
         }
+
 
         private void Sresult_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void adorder_Click(object sender, EventArgs e)
+        {
+            if (Canum.Text != null)
+            {
+                order or = new order(Canum.Text);
+                or.MdiParent = this.MdiParent;
+                or.Show();
+            }
+            else
+            {
+                order or = new order();
+                or.MdiParent = this.MdiParent;
+                or.Show();
+            }
+        }
+
+        private void invocecre_Click(object sender, EventArgs e)
+        {
+
+        }
+
+      
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            adpap pap = new adpap();
+            pap.MdiParent = this.MdiParent;
+            pap.Show();
+        }
+
+        private void Canum_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Clipboard.SetText(Canum.Text);
         }
     }
 }

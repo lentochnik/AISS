@@ -51,6 +51,7 @@
             // 
             this.LogINN.AutoSize = true;
             this.LogINN.Enabled = false;
+            this.LogINN.ForeColor = System.Drawing.Color.Black;
             this.LogINN.Location = new System.Drawing.Point(34, 25);
             this.LogINN.Name = "LogINN";
             this.LogINN.Size = new System.Drawing.Size(33, 13);
@@ -61,6 +62,7 @@
             // 
             this.PasswordN.AutoSize = true;
             this.PasswordN.Enabled = false;
+            this.PasswordN.ForeColor = System.Drawing.Color.Black;
             this.PasswordN.Location = new System.Drawing.Point(14, 62);
             this.PasswordN.Name = "PasswordN";
             this.PasswordN.Size = new System.Drawing.Size(53, 13);

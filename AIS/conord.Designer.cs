@@ -369,7 +369,7 @@
             this.But_unit.Name = "But_unit";
             this.But_unit.Size = new System.Drawing.Size(144, 48);
             this.But_unit.TabIndex = 33;
-            this.But_unit.Text = "Unit";
+            this.But_unit.Text = "Union";
             this.But_unit.UseVisualStyleBackColor = true;
             this.But_unit.Click += new System.EventHandler(this.But_unit_Click);
             // 
@@ -535,7 +535,7 @@
             this.MinimizeBox = false;
             this.Name = "conord";
             this.ShowIcon = false;
-            this.Text = "conord";
+            this.Text = "Combine with customer";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.conord_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

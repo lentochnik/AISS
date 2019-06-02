@@ -55,6 +55,9 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.adorder = new System.Windows.Forms.Button();
+            this.invocecre = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -62,7 +65,9 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.GridColor = System.Drawing.Color.Black;
             this.dataGridView1.Location = new System.Drawing.Point(12, 529);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(1010, 110);
@@ -70,7 +75,9 @@
             // 
             // dataGridView2
             // 
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.GridColor = System.Drawing.Color.Black;
             this.dataGridView2.Location = new System.Drawing.Point(605, 51);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(417, 444);
@@ -78,9 +85,16 @@
             // 
             // dataGridView3
             // 
+            this.dataGridView3.AllowUserToAddRows = false;
+            this.dataGridView3.AllowUserToDeleteRows = false;
+            this.dataGridView3.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.GridColor = System.Drawing.Color.Black;
             this.dataGridView3.Location = new System.Drawing.Point(12, 278);
             this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.ReadOnly = true;
+            this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView3.ShowCellErrors = false;
             this.dataGridView3.Size = new System.Drawing.Size(587, 217);
             this.dataGridView3.TabIndex = 2;
             // 
@@ -93,6 +107,7 @@
             this.Canum.TabIndex = 3;
             this.Canum.TabStop = true;
             this.Canum.Text = "Number ";
+            this.Canum.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Canum_LinkClicked);
             // 
             // Lab_Canum
             // 
@@ -133,71 +148,83 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(35, 35);
+            this.label4.Location = new System.Drawing.Point(22, 35);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.Size = new System.Drawing.Size(55, 13);
             this.label4.TabIndex = 8;
-            this.label4.Text = "label4";
+            this.label4.Text = "First name";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(36, 60);
+            this.label5.Location = new System.Drawing.Point(28, 60);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.Size = new System.Drawing.Size(49, 13);
             this.label5.TabIndex = 9;
-            this.label5.Text = "label5";
+            this.label5.Text = "Surname";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(35, 86);
+            this.label6.Location = new System.Drawing.Point(17, 86);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
+            this.label6.Size = new System.Drawing.Size(59, 13);
             this.label6.TabIndex = 10;
-            this.label6.Text = "label6";
+            this.label6.Text = "Patronymic";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(35, 119);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 13);
+            this.label7.Size = new System.Drawing.Size(26, 13);
             this.label7.TabIndex = 11;
-            this.label7.Text = "label7";
+            this.label7.Text = "INN";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(35, 144);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(35, 13);
+            this.label8.Size = new System.Drawing.Size(28, 13);
             this.label8.TabIndex = 12;
-            this.label8.Text = "label8";
+            this.label8.Text = "KPP";
             // 
             // textBox1
             // 
+            this.textBox1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Enabled = false;
             this.textBox1.Location = new System.Drawing.Point(77, 32);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.Size = new System.Drawing.Size(100, 13);
             this.textBox1.TabIndex = 13;
             // 
             // textBox2
             // 
+            this.textBox2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox2.Enabled = false;
             this.textBox2.Location = new System.Drawing.Point(77, 60);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.Size = new System.Drawing.Size(100, 13);
             this.textBox2.TabIndex = 14;
             // 
             // textBox3
             // 
+            this.textBox3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox3.Enabled = false;
             this.textBox3.Location = new System.Drawing.Point(77, 86);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
+            this.textBox3.Size = new System.Drawing.Size(100, 13);
             this.textBox3.TabIndex = 15;
             // 
             // textBox4
             // 
+            this.textBox4.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox4.Enabled = false;
             this.textBox4.Location = new System.Drawing.Point(230, 12);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
@@ -206,27 +233,39 @@
             // 
             // textBox5
             // 
+            this.textBox5.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox5.Enabled = false;
             this.textBox5.Location = new System.Drawing.Point(76, 112);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
+            this.textBox5.Size = new System.Drawing.Size(100, 13);
             this.textBox5.TabIndex = 17;
             // 
             // textBox6
             // 
+            this.textBox6.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox6.Enabled = false;
             this.textBox6.Location = new System.Drawing.Point(76, 137);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
+            this.textBox6.Size = new System.Drawing.Size(101, 13);
             this.textBox6.TabIndex = 18;
             // 
             // textBox7
             // 
+            this.textBox7.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox7.Enabled = false;
             this.textBox7.Location = new System.Drawing.Point(76, 163);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
+            this.textBox7.Size = new System.Drawing.Size(129, 13);
             this.textBox7.TabIndex = 19;
             // 
             // textBox8
             // 
+            this.textBox8.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox8.Enabled = false;
             this.textBox8.Location = new System.Drawing.Point(76, 189);
             this.textBox8.Multiline = true;
             this.textBox8.Name = "textBox8";
@@ -238,32 +277,32 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(35, 166);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(35, 13);
+            this.label9.Size = new System.Drawing.Size(28, 13);
             this.label9.TabIndex = 21;
-            this.label9.Text = "label9";
+            this.label9.Text = "ACC";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(29, 213);
+            this.label10.Location = new System.Drawing.Point(37, 213);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(41, 13);
+            this.label10.Size = new System.Drawing.Size(34, 13);
             this.label10.TabIndex = 22;
-            this.label10.Text = "label10";
+            this.label10.Text = "Adres";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(183, 35);
+            this.label11.Location = new System.Drawing.Point(181, 42);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(41, 13);
+            this.label11.Size = new System.Drawing.Size(51, 13);
             this.label11.TabIndex = 23;
-            this.label11.Text = "label11";
+            this.label11.Text = "Company";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(230, 119);
+            this.label12.Location = new System.Drawing.Point(227, 119);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(41, 13);
             this.label12.TabIndex = 24;
@@ -272,7 +311,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(278, 118);
+            this.label13.Location = new System.Drawing.Point(279, 119);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(41, 13);
             this.label13.TabIndex = 25;
@@ -281,17 +320,50 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(326, 117);
+            this.label14.Location = new System.Drawing.Point(341, 119);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(41, 13);
             this.label14.TabIndex = 26;
             this.label14.Text = "label14";
+            // 
+            // adorder
+            // 
+            this.adorder.Location = new System.Drawing.Point(385, 196);
+            this.adorder.Name = "adorder";
+            this.adorder.Size = new System.Drawing.Size(84, 46);
+            this.adorder.TabIndex = 27;
+            this.adorder.Text = "Add new order";
+            this.adorder.UseVisualStyleBackColor = true;
+            this.adorder.Click += new System.EventHandler(this.adorder_Click);
+            // 
+            // invocecre
+            // 
+            this.invocecre.Location = new System.Drawing.Point(481, 196);
+            this.invocecre.Name = "invocecre";
+            this.invocecre.Size = new System.Drawing.Size(99, 46);
+            this.invocecre.TabIndex = 28;
+            this.invocecre.Text = "Create invoce";
+            this.invocecre.UseVisualStyleBackColor = true;
+            this.invocecre.Click += new System.EventHandler(this.invocecre_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(444, 131);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(77, 59);
+            this.button1.TabIndex = 29;
+            this.button1.Text = "Add new payment";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Sresult
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1034, 651);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.invocecre);
+            this.Controls.Add(this.adorder);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
@@ -319,7 +391,11 @@
             this.Controls.Add(this.dataGridView3);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Sresult";
+            this.ShowIcon = false;
             this.Text = "Sresult";
             this.Load += new System.EventHandler(this.Sresult_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -359,5 +435,8 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button adorder;
+        private System.Windows.Forms.Button invocecre;
+        private System.Windows.Forms.Button button1;
     }
 }

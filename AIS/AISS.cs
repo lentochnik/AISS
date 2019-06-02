@@ -118,5 +118,17 @@ namespace AIS
             srt.MdiParent = this;
             srt.Show();
         }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void configurationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Settings settings = new Settings();
+            settings.MdiParent = this;
+            settings.Show();
+        }
     }
 }

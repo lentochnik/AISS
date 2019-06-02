@@ -215,8 +215,6 @@
     <None Include="Data\img\settings.png" />
     <None Include="Resources\setig.bmp" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Res\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

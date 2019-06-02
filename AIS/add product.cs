@@ -121,5 +121,10 @@ namespace AIS
                 e.Handled = true;
             }
         }
+
+        private void add_product_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
