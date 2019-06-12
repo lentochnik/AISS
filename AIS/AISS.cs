@@ -100,9 +100,7 @@ namespace AIS
 
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            Invoce iv = new Invoce();
-                iv.MdiParent = this;
-                iv.Show();
+         
         }
 
         private void strorageToolStripMenuItem_Click(object sender, EventArgs e)

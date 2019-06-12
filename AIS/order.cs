@@ -16,6 +16,7 @@ namespace AIS
     {
         MySqlConnection conn = Param.GetDBConnection();
         double  am;
+        string val;
         public order(string a)
         {
             InitializeComponent();
@@ -33,10 +34,10 @@ namespace AIS
                     textBox3.Text = dt1.Rows[0][2].ToString();
                     textBox4.Text = dt1.Rows[0][3].ToString();
                     textBox5.Text = dt1.Rows[0][12].ToString() + "\r\n" + dt1.Rows[0][10].ToString() + ", " + dt1.Rows[0][11].ToString() + ",\r\n" + dt1.Rows[0][9].ToString() + ",\r\n" + dt1.Rows[0][8].ToString();
-                    label1.Text = dt1.Rows[0][18].ToString() + "  " + dt1.Rows[0][17].ToString();
-                    
+                    val = dt1.Rows[0][17].ToString();
                   string amm = dt1.Rows[0][18].ToString();
                     am = Convert.ToDouble(amm);
+                    label1.Text = am.ToString() + " " + val;
                 }
 
                 conn.Close();
@@ -78,6 +79,7 @@ namespace AIS
 
         private void data_ad()
         {
+
             conn.Open();
             MySqlCommand cmd = new MySqlCommand("Select * From stor", conn);
             MySqlDataReader dr = cmd.ExecuteReader();
@@ -148,15 +150,16 @@ namespace AIS
             if (Convert.ToInt32(textBox11.Text) < Convert.ToInt32(textBox8.Text))
 
             {
+                double nd = Convert.ToDouble(textBox9.Text) * Convert.ToDouble(textBox11.Text);
                 double a = Convert.ToDouble(textBox9.Text);
                 double b = Convert.ToDouble(textBox10.Text);
-                double c = b * (a / 100);
-                a = (a + c) * Convert.ToDouble(textBox11.Text); ;
-                c = c * Convert.ToDouble(textBox8.Text);
+                double c = (b * (a / 100));
+                a = (a + c) * Convert.ToDouble(textBox11.Text);
+                c = c * Convert.ToDouble(textBox11.Text);
                 double ab = a;
                 sumextr(ab);
                 MySqlCommand cmd;
-                string CmdString = "Insert Into orders (product, idProd, name, quantity, pice, nds, ndssumm, total, idclient)Values(@product, @idProd, @name, @quantity, @pice, @nds, @ndssumm, @total, @idclient)";
+                string CmdString = "Insert Into orders (product, idProd, name, quantity, pice, sumnnds, nds, ndssumm, total, idclient, Invcr)Values(@product, @idProd, @name, @quantity, @pice, @sumnnds, @nds, @ndssumm, @total, @idclient, @Invcr)";
                 cmd = new MySqlCommand(CmdString, conn);
 
                 cmd.Parameters.Add("@product", MySqlDbType.VarChar, 255);
@@ -164,21 +167,25 @@ namespace AIS
                 cmd.Parameters.Add("@name", MySqlDbType.VarChar, 45);
                 cmd.Parameters.Add("@quantity", MySqlDbType.Int32, 11);
                 cmd.Parameters.Add("@pice", MySqlDbType.Decimal, 12);
+                cmd.Parameters.Add("@sumnnds", MySqlDbType.Decimal, 12);
                 cmd.Parameters.Add("@nds", MySqlDbType.Decimal, 12);
                 cmd.Parameters.Add("@ndssumm", MySqlDbType.Decimal, 12);
                 cmd.Parameters.Add("@total", MySqlDbType.Decimal, 12);
                 cmd.Parameters.Add("@idclient", MySqlDbType.VarChar, 255);
+                cmd.Parameters.Add("@Invcr", MySqlDbType.Int16, 2);
 
                 cmd.Parameters["@product"].Value = textBox7.Text;
                 cmd.Parameters["@idProd"].Value = textBox6.Text;
                 cmd.Parameters["@name"].Value = textBox7.Text;
                 cmd.Parameters["@quantity"].Value = textBox11.Text;
-
+                
                 cmd.Parameters["@pice"].Value = textBox9.Text;
+                cmd.Parameters["@sumnnds"].Value = nd;
                 cmd.Parameters["@nds"].Value = textBox10.Text;
                 cmd.Parameters["@ndssumm"].Value = c;
                 cmd.Parameters["@total"].Value = a;
                 cmd.Parameters["@idclient"].Value = textBox1.Text;
+                cmd.Parameters["@Invcr"].Value = 0;
 
                 conn.Open();
 
@@ -214,24 +221,31 @@ namespace AIS
             {
                 if (am > a)
                 {
-                    am -= a;
-                    sta -= Convert.ToInt32(textBox11.Text);
-                    conn.Open();
-                    MySqlCommand cmd = new MySqlCommand("Update clients Set accounamoun='" + Convert1(am.ToString()) +  "' Where Id ='" + textBox1.Text + "'", conn);
-                    cmd.ExecuteNonQuery();
-                    cmd = new MySqlCommand("Update stor Set quantity='" + sta + "' Where idStor='" + textBox6.Text + "'", conn);
-                    cmd.ExecuteNonQuery();
-                    conn.Close();
-
-                    MessageBox.Show
-                       (
-                         String.Format("Added to order"),
-                         "Information",
-                         MessageBoxButtons.OK,
-                         MessageBoxIcon.Information,
-                         MessageBoxDefaultButton.Button1,
-                         MessageBoxOptions.DefaultDesktopOnly
-                         );
+                    if (sta >= Convert.ToInt32(textBox11.Text))
+                        {
+                        am -= a;
+                        sta -= Convert.ToInt32(textBox11.Text);
+                        dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[2].Value = sta;
+                        dataGridView1.Refresh();
+                        label1.Text = am.ToString() + " " + val;
+                        textBox8.Text = sta.ToString();
+                        conn.Open();
+                        MySqlCommand cmd = new MySqlCommand("Update clients Set accounamoun='" + Convert1(am.ToString()) + "' Where Id ='" + textBox1.Text + "'", conn);
+                        cmd.ExecuteNonQuery();
+                        cmd = new MySqlCommand("Update stor Set quantity='" + sta + "' Where idStor='" + textBox6.Text + "'", conn);
+                        cmd.ExecuteNonQuery();
+                        conn.Close();
+                        dataGridView1.Refresh();
+                        MessageBox.Show
+                           (
+                             String.Format("Added to order"),
+                             "Information",
+                             MessageBoxButtons.OK,
+                             MessageBoxIcon.Information,
+                             MessageBoxDefaultButton.Button1,
+                             MessageBoxOptions.DefaultDesktopOnly
+                             );
+                    }
                 }
                 else
                 {

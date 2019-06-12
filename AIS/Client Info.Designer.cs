@@ -478,9 +478,7 @@
             // 
             this.Ccur.FormattingEnabled = true;
             this.Ccur.Items.AddRange(new object[] {
-            "RUB",
-            "USD",
-            "EUR"});
+            "RUB"});
             this.Ccur.Location = new System.Drawing.Point(344, 159);
             this.Ccur.Name = "Ccur";
             this.Ccur.Size = new System.Drawing.Size(80, 21);

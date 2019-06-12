@@ -115,6 +115,7 @@
             // 
             // textBox6
             // 
+            this.textBox6.Enabled = false;
             this.textBox6.Location = new System.Drawing.Point(328, 51);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(60, 20);
@@ -122,6 +123,7 @@
             // 
             // textBox7
             // 
+            this.textBox7.Enabled = false;
             this.textBox7.Location = new System.Drawing.Point(394, 51);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(100, 20);
@@ -129,6 +131,7 @@
             // 
             // textBox8
             // 
+            this.textBox8.Enabled = false;
             this.textBox8.Location = new System.Drawing.Point(394, 77);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(100, 20);
@@ -136,6 +139,7 @@
             // 
             // textBox9
             // 
+            this.textBox9.Enabled = false;
             this.textBox9.Location = new System.Drawing.Point(394, 103);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(100, 20);
@@ -143,6 +147,7 @@
             // 
             // textBox10
             // 
+            this.textBox10.Enabled = false;
             this.textBox10.Location = new System.Drawing.Point(500, 103);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(34, 20);
@@ -150,6 +155,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Enabled = false;
             this.pictureBox1.Location = new System.Drawing.Point(553, 21);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(234, 164);
@@ -171,9 +177,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(49, 130);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(61, 13);
             this.label1.TabIndex = 15;
-            this.label1.Text = "label1";
+            this.label1.Text = "Accamount";
             // 
             // textBox11
             // 
@@ -209,6 +215,7 @@
             this.Name = "order";
             this.ShowIcon = false;
             this.Text = "Create new order";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.order_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -201,6 +201,12 @@ namespace AIS
 
         private void invocecre_Click(object sender, EventArgs e)
         {
+            if (Canum.Text != null)
+            {
+                Invoce invoce = new Invoce(Canum.Text);
+                invoce.MdiParent = this.MdiParent;
+                invoce.Show();
+            }
 
         }
 

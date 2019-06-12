@@ -8,22 +8,108 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Printing;
+using MySql.Data.MySqlClient;
 
 namespace AIS
 {
     public partial class Invoce : Form
     {
-        public Invoce()
+        int d = 1;
+        MySqlConnection conn = Param.GetDBConnection();
+
+        public Invoce(string a)
         {
             InitializeComponent();
             SetReadonlyControls(gb1.Controls);
             printDocument1.DefaultPageSettings.Landscape = true;
             dataGridView1.ColumnHeadersVisible = false;
-
-
+           
+            data_cret(a);
+            orn(a);
+            d -= 1;
+            label59.Text = d.ToString();
+            string s4 = DateTime.Now.ToString("dd MMMM yyyy");
+            
+                        double s = dataGridView1.Rows.Cast<DataGridViewRow>().Sum(t => Convert.ToDouble(t.Cells[13].Value));
+            label54.Text = "НДС  " + s.ToString() + " RUB";
+            double s1 = dataGridView1.Rows.Cast<DataGridViewRow>().Sum(t => Convert.ToDouble(t.Cells[14].Value));
+            label55.Text = s1.ToString() + " RUB";
+            double s2 = dataGridView1.Rows.Cast<DataGridViewRow>().Sum(t => Convert.ToDouble(t.Cells[13].Value));
+            label56.Text = "НДС  " + s2.ToString() + " RUB";
+            double s3 = dataGridView1.Rows.Cast<DataGridViewRow>().Sum(t => Convert.ToDouble(t.Cells[14].Value));
+            label57.Text = s3.ToString() + " RUB";
+            invdate.Text = s4;
+            textBox12.Text = s4;
+            textBox10.Text = s4;
         }
 
+        private void orn(string a)
+        {
+            string s;
 
+
+            if (a != null)
+            {
+                conn.Open();
+                MySqlCommand cmd1 = new MySqlCommand("Select * From clients Where Id= '" + a + "'", conn);
+                MySqlDataReader dr1 = cmd1.ExecuteReader();
+                DataTable dt1 = new DataTable();
+                dt1.Load(dr1);
+                if (dt1.Rows.Count > 0)
+                {
+                    orname.Text = dt1.Rows[0][1].ToString() + " "
+                  + dt1.Rows[0][2].ToString() + " "
+                  + dt1.Rows[0][3].ToString() + " "
+                  + dt1.Rows[0][4].ToString() + "ИНН: "
+                  + dt1.Rows[0][5].ToString() + "  КПП: "
+                  + dt1.Rows[0][5].ToString() + " Номер счета:"
+                  + dt1.Rows[0][7].ToString() + ", \r\nАдрес: "
+                  + dt1.Rows[0][12].ToString() + ", "
+                  + dt1.Rows[0][10].ToString() + ", "
+                  + dt1.Rows[0][11].ToString() + ", "
+                  + dt1.Rows[0][9].ToString() + ", "
+                  + dt1.Rows[0][8].ToString();
+                }
+
+                conn.Close();
+                clname.Text = orname.Text;
+            }
+        }
+
+        private void data_cret(string a)
+        {
+
+            if (a != null)
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("Select * From orders where idclient='" + a + "' and Invcr='0'", conn);
+                MySqlDataReader dr = cmd.ExecuteReader();
+                DataTable dt = new DataTable();
+                dt.Load(dr);
+                if (dt.Rows.Count > 0)
+                {
+                    
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        
+                        if (dataGridView1.Rows.Count < dt.Rows.Count)
+                        {
+                            dataGridView1.Rows.Add();
+                            dataGridView1.Rows[i].Cells[0].Value = d;
+                            d++;
+                        }
+                        for (int j = 1; j < dt.Columns.Count -2; j++)
+                        {
+
+                            dataGridView1.Rows[i].Cells[j].Value = dt.Rows[i][j].ToString();
+                        }
+
+                    }
+                    conn.Close();
+                }
+
+            }
+        }
 
         private void SetReadonlyControls(Control.ControlCollection controlCollection)
         {
