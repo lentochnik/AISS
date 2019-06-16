@@ -43,7 +43,6 @@
             this.inWorkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addInvoiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.strorageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.accountManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,6 +63,7 @@
             // 
             // toolStripStatusLabel
             // 
+            this.toolStripStatusLabel.ForeColor = System.Drawing.Color.Green;
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
             resources.ApplyResources(this.toolStripStatusLabel, "toolStripStatusLabel");
             this.toolStripStatusLabel.Click += new System.EventHandler(this.ToolStripStatusLabel_Click);
@@ -122,7 +122,6 @@
             this.inWorkToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.searchToolStripMenuItem,
             this.addInvoiceToolStripMenuItem,
-            this.toolStripMenuItem2,
             this.strorageToolStripMenuItem});
             this.inWorkToolStripMenuItem.Name = "inWorkToolStripMenuItem";
             resources.ApplyResources(this.inWorkToolStripMenuItem, "inWorkToolStripMenuItem");
@@ -138,12 +137,6 @@
             this.addInvoiceToolStripMenuItem.Name = "addInvoiceToolStripMenuItem";
             resources.ApplyResources(this.addInvoiceToolStripMenuItem, "addInvoiceToolStripMenuItem");
             this.addInvoiceToolStripMenuItem.Click += new System.EventHandler(this.addInvoiceToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
-            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // strorageToolStripMenuItem
             // 
@@ -226,7 +219,6 @@
         private System.Windows.Forms.ToolStripMenuItem inWorkToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addInvoiceToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem strorageToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem companyInfoToolStripMenuItem;
     }

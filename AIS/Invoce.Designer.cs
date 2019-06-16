@@ -111,21 +111,6 @@
             this.textBox54 = new System.Windows.Forms.TextBox();
             this.textBox55 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.numt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tovar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.naimen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.okey = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.upak = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vodnom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mest = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.brutto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.netto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cena = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nds = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sumnds = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.summsnds = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
@@ -170,16 +155,31 @@
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.button1 = new System.Windows.Forms.Button();
             this.gb1 = new System.Windows.Forms.GroupBox();
+            this.label59 = new System.Windows.Forms.Label();
+            this.label57 = new System.Windows.Forms.Label();
+            this.label56 = new System.Windows.Forms.Label();
+            this.label55 = new System.Windows.Forms.Label();
+            this.label54 = new System.Windows.Forms.Label();
             this.bas = new System.Windows.Forms.Label();
+            this.orname = new System.Windows.Forms.Label();
+            this.numt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tovar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.naimen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.okey = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.upak = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vodnom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mest = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.brutto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.netto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cena = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nds = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sumnds = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.summsnds = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.payname = new System.Windows.Forms.Label();
             this.prname = new System.Windows.Forms.Label();
             this.clname = new System.Windows.Forms.Label();
-            this.orname = new System.Windows.Forms.Label();
-            this.label54 = new System.Windows.Forms.Label();
-            this.label55 = new System.Windows.Forms.Label();
-            this.label56 = new System.Windows.Forms.Label();
-            this.label57 = new System.Windows.Forms.Label();
-            this.label59 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -207,7 +207,7 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.SystemColors.Window;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(132, 174);
+            this.pictureBox2.Location = new System.Drawing.Point(133, 170);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(774, 10);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -412,7 +412,7 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.SystemColors.Window;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(132, 155);
+            this.pictureBox3.Location = new System.Drawing.Point(132, 141);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(774, 10);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -480,7 +480,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.White;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Arial Narrow", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(210)), true);
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(374, 102);
@@ -493,10 +493,10 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.White;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Arial Narrow", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(210)), true);
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(461, 122);
+            this.label5.Location = new System.Drawing.Point(462, 122);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(121, 13);
             this.label5.TabIndex = 26;
@@ -518,10 +518,10 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.White;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Arial Narrow", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(210)), true);
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(408, 160);
+            this.label7.Location = new System.Drawing.Point(408, 144);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(242, 13);
             this.label7.TabIndex = 28;
@@ -531,10 +531,10 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.White;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Arial Narrow", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(210)), true);
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(408, 180);
+            this.label8.Location = new System.Drawing.Point(408, 174);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(242, 13);
             this.label8.TabIndex = 29;
@@ -544,10 +544,10 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.White;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Arial Narrow", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(210)), true);
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(408, 199);
+            this.label9.Location = new System.Drawing.Point(408, 197);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(242, 13);
             this.label9.TabIndex = 30;
@@ -1160,6 +1160,7 @@
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.dataGridView1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -1180,7 +1181,7 @@
             this.nds,
             this.sumnds,
             this.summsnds});
-            this.dataGridView1.GridColor = System.Drawing.Color.White;
+            this.dataGridView1.GridColor = System.Drawing.Color.Black;
             this.dataGridView1.Location = new System.Drawing.Point(36, 408);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -1193,113 +1194,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(1069, 136);
             this.dataGridView1.TabIndex = 81;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // numt
-            // 
-            this.numt.HeaderText = "numt";
-            this.numt.MaxInputLength = 10;
-            this.numt.Name = "numt";
-            this.numt.ReadOnly = true;
-            this.numt.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.numt.Width = 27;
-            // 
-            // tovar
-            // 
-            this.tovar.HeaderText = "tovar";
-            this.tovar.Name = "tovar";
-            this.tovar.ReadOnly = true;
-            this.tovar.Width = 309;
-            // 
-            // code
-            // 
-            this.code.HeaderText = "code";
-            this.code.Name = "code";
-            this.code.ReadOnly = true;
-            this.code.Width = 28;
-            // 
-            // naimen
-            // 
-            this.naimen.HeaderText = "naimen";
-            this.naimen.Name = "naimen";
-            this.naimen.ReadOnly = true;
-            this.naimen.Width = 47;
-            // 
-            // okey
-            // 
-            this.okey.HeaderText = "okey";
-            this.okey.Name = "okey";
-            this.okey.ReadOnly = true;
-            this.okey.Width = 35;
-            // 
-            // upak
-            // 
-            this.upak.HeaderText = "upak";
-            this.upak.Name = "upak";
-            this.upak.ReadOnly = true;
-            this.upak.Width = 28;
-            // 
-            // vodnom
-            // 
-            this.vodnom.HeaderText = "vodnom";
-            this.vodnom.Name = "vodnom";
-            this.vodnom.ReadOnly = true;
-            this.vodnom.Width = 42;
-            // 
-            // mest
-            // 
-            this.mest.HeaderText = "mest";
-            this.mest.Name = "mest";
-            this.mest.ReadOnly = true;
-            this.mest.Width = 35;
-            // 
-            // brutto
-            // 
-            this.brutto.HeaderText = "brutto";
-            this.brutto.Name = "brutto";
-            this.brutto.ReadOnly = true;
-            this.brutto.Width = 30;
-            // 
-            // netto
-            // 
-            this.netto.HeaderText = "netto";
-            this.netto.Name = "netto";
-            this.netto.ReadOnly = true;
-            this.netto.Width = 46;
-            // 
-            // cena
-            // 
-            this.cena.HeaderText = "cena";
-            this.cena.Name = "cena";
-            this.cena.ReadOnly = true;
-            this.cena.Width = 78;
-            // 
-            // sum
-            // 
-            this.sum.HeaderText = "sum";
-            this.sum.Name = "sum";
-            this.sum.ReadOnly = true;
-            this.sum.Width = 90;
-            // 
-            // nds
-            // 
-            this.nds.HeaderText = "nds";
-            this.nds.Name = "nds";
-            this.nds.ReadOnly = true;
-            this.nds.Width = 58;
-            // 
-            // sumnds
-            // 
-            this.sumnds.HeaderText = "sumnds";
-            this.sumnds.Name = "sumnds";
-            this.sumnds.ReadOnly = true;
-            this.sumnds.Width = 90;
-            // 
-            // summsnds
-            // 
-            this.summsnds.HeaderText = "summsnds";
-            this.summsnds.Name = "summsnds";
-            this.summsnds.ReadOnly = true;
-            this.summsnds.Width = 126;
             // 
             // dataGridView2
             // 
@@ -1768,15 +1662,22 @@
             // 
             // gb1
             // 
+            this.gb1.Controls.Add(this.textBox5);
+            this.gb1.Controls.Add(this.label8);
+            this.gb1.Controls.Add(this.label7);
+            this.gb1.Controls.Add(this.label5);
+            this.gb1.Controls.Add(this.pictureBox4);
+            this.gb1.Controls.Add(this.payname);
+            this.gb1.Controls.Add(this.clname);
+            this.gb1.Controls.Add(this.prname);
+            this.gb1.Controls.Add(this.pictureBox2);
+            this.gb1.Controls.Add(this.pictureBox3);
             this.gb1.Controls.Add(this.label59);
             this.gb1.Controls.Add(this.label57);
             this.gb1.Controls.Add(this.label56);
             this.gb1.Controls.Add(this.label55);
             this.gb1.Controls.Add(this.label54);
             this.gb1.Controls.Add(this.bas);
-            this.gb1.Controls.Add(this.payname);
-            this.gb1.Controls.Add(this.prname);
-            this.gb1.Controls.Add(this.clname);
             this.gb1.Controls.Add(this.orname);
             this.gb1.Controls.Add(this.label53);
             this.gb1.Controls.Add(this.label65);
@@ -1865,16 +1766,12 @@
             this.gb1.Controls.Add(this.label14);
             this.gb1.Controls.Add(this.label10);
             this.gb1.Controls.Add(this.label9);
-            this.gb1.Controls.Add(this.label8);
-            this.gb1.Controls.Add(this.label7);
             this.gb1.Controls.Add(this.label6);
-            this.gb1.Controls.Add(this.label5);
             this.gb1.Controls.Add(this.label4);
             this.gb1.Controls.Add(this.label3);
             this.gb1.Controls.Add(this.label2);
             this.gb1.Controls.Add(this.label1);
             this.gb1.Controls.Add(this.pictureBox5);
-            this.gb1.Controls.Add(this.pictureBox3);
             this.gb1.Controls.Add(this.prdate);
             this.gb1.Controls.Add(this.prnum);
             this.gb1.Controls.Add(this.bdate);
@@ -1887,25 +1784,67 @@
             this.gb1.Controls.Add(this.textBox8);
             this.gb1.Controls.Add(this.payokpo);
             this.gb1.Controls.Add(this.prokpo);
-            this.gb1.Controls.Add(this.textBox5);
             this.gb1.Controls.Add(this.textBox4);
             this.gb1.Controls.Add(this.orgokpo);
             this.gb1.Controls.Add(this.fokud);
             this.gb1.Controls.Add(this.textBox1);
-            this.gb1.Controls.Add(this.pictureBox2);
-            this.gb1.Controls.Add(this.pictureBox4);
             this.gb1.Controls.Add(this.label13);
             this.gb1.Controls.Add(this.label12);
             this.gb1.Controls.Add(this.label11);
             this.gb1.Controls.Add(this.pictureBox6);
             this.gb1.Controls.Add(this.pictureBox1);
             this.gb1.ForeColor = System.Drawing.Color.Black;
-            this.gb1.Location = new System.Drawing.Point(8, 7);
+            this.gb1.Location = new System.Drawing.Point(8, 6);
             this.gb1.Name = "gb1";
             this.gb1.Size = new System.Drawing.Size(1117, 865);
             this.gb1.TabIndex = 129;
             this.gb1.TabStop = false;
             this.gb1.Enter += new System.EventHandler(this.gb1_Enter);
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Location = new System.Drawing.Point(406, 603);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(21, 13);
+            this.label59.TabIndex = 138;
+            this.label59.Text = "lab";
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Location = new System.Drawing.Point(1017, 564);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(41, 13);
+            this.label57.TabIndex = 137;
+            this.label57.Text = "label57";
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Location = new System.Drawing.Point(904, 564);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(41, 13);
+            this.label56.TabIndex = 136;
+            this.label56.Text = "label56";
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Location = new System.Drawing.Point(1017, 547);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(41, 13);
+            this.label55.TabIndex = 135;
+            this.label55.Text = "label55";
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Location = new System.Drawing.Point(904, 547);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(41, 13);
+            this.label54.TabIndex = 134;
+            this.label54.Text = "label54";
             // 
             // bas
             // 
@@ -1917,12 +1856,130 @@
             this.bas.Text = "label59";
             this.bas.Click += new System.EventHandler(this.label59_Click);
             // 
+            // orname
+            // 
+            this.orname.AutoSize = true;
+            this.orname.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
+            this.orname.Location = new System.Drawing.Point(37, 75);
+            this.orname.Name = "orname";
+            this.orname.Size = new System.Drawing.Size(41, 13);
+            this.orname.TabIndex = 129;
+            this.orname.Text = "label54";
+            // 
+            // numt
+            // 
+            this.numt.HeaderText = "numt";
+            this.numt.MaxInputLength = 10;
+            this.numt.Name = "numt";
+            this.numt.ReadOnly = true;
+            this.numt.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.numt.Width = 27;
+            // 
+            // tovar
+            // 
+            this.tovar.HeaderText = "tovar";
+            this.tovar.Name = "tovar";
+            this.tovar.ReadOnly = true;
+            this.tovar.Width = 309;
+            // 
+            // code
+            // 
+            this.code.HeaderText = "code";
+            this.code.Name = "code";
+            this.code.ReadOnly = true;
+            this.code.Width = 28;
+            // 
+            // naimen
+            // 
+            this.naimen.HeaderText = "naimen";
+            this.naimen.Name = "naimen";
+            this.naimen.ReadOnly = true;
+            this.naimen.Width = 47;
+            // 
+            // okey
+            // 
+            this.okey.HeaderText = "okey";
+            this.okey.Name = "okey";
+            this.okey.ReadOnly = true;
+            this.okey.Width = 35;
+            // 
+            // upak
+            // 
+            this.upak.HeaderText = "upak";
+            this.upak.Name = "upak";
+            this.upak.ReadOnly = true;
+            this.upak.Width = 28;
+            // 
+            // vodnom
+            // 
+            this.vodnom.HeaderText = "vodnom";
+            this.vodnom.Name = "vodnom";
+            this.vodnom.ReadOnly = true;
+            this.vodnom.Width = 42;
+            // 
+            // mest
+            // 
+            this.mest.HeaderText = "mest";
+            this.mest.Name = "mest";
+            this.mest.ReadOnly = true;
+            this.mest.Width = 35;
+            // 
+            // brutto
+            // 
+            this.brutto.HeaderText = "brutto";
+            this.brutto.Name = "brutto";
+            this.brutto.ReadOnly = true;
+            this.brutto.Width = 30;
+            // 
+            // netto
+            // 
+            this.netto.HeaderText = "netto";
+            this.netto.Name = "netto";
+            this.netto.ReadOnly = true;
+            this.netto.Width = 46;
+            // 
+            // cena
+            // 
+            this.cena.HeaderText = "cena";
+            this.cena.Name = "cena";
+            this.cena.ReadOnly = true;
+            this.cena.Width = 78;
+            // 
+            // sum
+            // 
+            this.sum.HeaderText = "sum";
+            this.sum.Name = "sum";
+            this.sum.ReadOnly = true;
+            this.sum.Width = 90;
+            // 
+            // nds
+            // 
+            this.nds.HeaderText = "nds";
+            this.nds.Name = "nds";
+            this.nds.ReadOnly = true;
+            this.nds.Width = 58;
+            // 
+            // sumnds
+            // 
+            this.sumnds.HeaderText = "sumnds";
+            this.sumnds.Name = "sumnds";
+            this.sumnds.ReadOnly = true;
+            this.sumnds.Width = 90;
+            // 
+            // summsnds
+            // 
+            this.summsnds.HeaderText = "summsnds";
+            this.summsnds.Name = "summsnds";
+            this.summsnds.ReadOnly = true;
+            this.summsnds.Width = 124;
+            // 
             // payname
             // 
             this.payname.AutoSize = true;
-            this.payname.Location = new System.Drawing.Point(134, 183);
+            this.payname.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.payname.Location = new System.Drawing.Point(135, 179);
             this.payname.Name = "payname";
-            this.payname.Size = new System.Drawing.Size(41, 13);
+            this.payname.Size = new System.Drawing.Size(29, 9);
             this.payname.TabIndex = 132;
             this.payname.Text = "label57";
             this.payname.Click += new System.EventHandler(this.label57_Click);
@@ -1930,9 +1987,10 @@
             // prname
             // 
             this.prname.AutoSize = true;
-            this.prname.Location = new System.Drawing.Point(134, 162);
+            this.prname.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.prname.Location = new System.Drawing.Point(135, 156);
             this.prname.Name = "prname";
-            this.prname.Size = new System.Drawing.Size(41, 13);
+            this.prname.Size = new System.Drawing.Size(29, 9);
             this.prname.TabIndex = 131;
             this.prname.Text = "label56";
             // 
@@ -1940,65 +1998,12 @@
             // 
             this.clname.AutoSize = true;
             this.clname.BackColor = System.Drawing.Color.White;
-            this.clname.Location = new System.Drawing.Point(134, 133);
+            this.clname.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.clname.Location = new System.Drawing.Point(134, 127);
             this.clname.Name = "clname";
-            this.clname.Size = new System.Drawing.Size(41, 13);
+            this.clname.Size = new System.Drawing.Size(29, 9);
             this.clname.TabIndex = 130;
             this.clname.Text = "label55";
-            // 
-            // orname
-            // 
-            this.orname.AutoSize = true;
-            this.orname.Location = new System.Drawing.Point(38, 73);
-            this.orname.Name = "orname";
-            this.orname.Size = new System.Drawing.Size(41, 13);
-            this.orname.TabIndex = 129;
-            this.orname.Text = "label54";
-            // 
-            // label54
-            // 
-            this.label54.AutoSize = true;
-            this.label54.Location = new System.Drawing.Point(904, 547);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(41, 13);
-            this.label54.TabIndex = 134;
-            this.label54.Text = "label54";
-            // 
-            // label55
-            // 
-            this.label55.AutoSize = true;
-            this.label55.Location = new System.Drawing.Point(1017, 547);
-            this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(41, 13);
-            this.label55.TabIndex = 135;
-            this.label55.Text = "label55";
-            // 
-            // label56
-            // 
-            this.label56.AutoSize = true;
-            this.label56.Location = new System.Drawing.Point(904, 564);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(41, 13);
-            this.label56.TabIndex = 136;
-            this.label56.Text = "label56";
-            // 
-            // label57
-            // 
-            this.label57.AutoSize = true;
-            this.label57.Location = new System.Drawing.Point(1017, 564);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(41, 13);
-            this.label57.TabIndex = 137;
-            this.label57.Text = "label57";
-            // 
-            // label59
-            // 
-            this.label59.AutoSize = true;
-            this.label59.Location = new System.Drawing.Point(406, 603);
-            this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(21, 13);
-            this.label59.TabIndex = 138;
-            this.label59.Text = "lab";
             // 
             // Invoce
             // 
@@ -2158,10 +2163,12 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox gb1;
         private System.Windows.Forms.Label bas;
-        private System.Windows.Forms.Label payname;
-        private System.Windows.Forms.Label prname;
-        private System.Windows.Forms.Label clname;
         private System.Windows.Forms.Label orname;
+        private System.Windows.Forms.Label label57;
+        private System.Windows.Forms.Label label56;
+        private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.Label label59;
         private System.Windows.Forms.DataGridViewTextBoxColumn numt;
         private System.Windows.Forms.DataGridViewTextBoxColumn tovar;
         private System.Windows.Forms.DataGridViewTextBoxColumn code;
@@ -2177,10 +2184,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nds;
         private System.Windows.Forms.DataGridViewTextBoxColumn sumnds;
         private System.Windows.Forms.DataGridViewTextBoxColumn summsnds;
-        private System.Windows.Forms.Label label57;
-        private System.Windows.Forms.Label label56;
-        private System.Windows.Forms.Label label55;
-        private System.Windows.Forms.Label label54;
-        private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.Label payname;
+        private System.Windows.Forms.Label clname;
+        private System.Windows.Forms.Label prname;
     }
 }

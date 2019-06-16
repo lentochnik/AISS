@@ -48,28 +48,55 @@ namespace AIS
             if (a != null)
             {
                 conn.Open();
-                MySqlCommand cmd1 = new MySqlCommand("Select * From clients Where Id= '" + a + "'", conn);
+                MySqlCommand cmd1 = new MySqlCommand("Select * From cominfo Where id= 1", conn);
                 MySqlDataReader dr1 = cmd1.ExecuteReader();
                 DataTable dt1 = new DataTable();
                 dt1.Load(dr1);
                 if (dt1.Rows.Count > 0)
                 {
-                    orname.Text = dt1.Rows[0][1].ToString() + " "
-                  + dt1.Rows[0][2].ToString() + " "
-                  + dt1.Rows[0][3].ToString() + " "
-                  + dt1.Rows[0][4].ToString() + "ИНН: "
-                  + dt1.Rows[0][5].ToString() + "  КПП: "
-                  + dt1.Rows[0][5].ToString() + " Номер счета:"
-                  + dt1.Rows[0][7].ToString() + ", \r\nАдрес: "
-                  + dt1.Rows[0][12].ToString() + ", "
-                  + dt1.Rows[0][10].ToString() + ", "
-                  + dt1.Rows[0][11].ToString() + ", "
-                  + dt1.Rows[0][9].ToString() + ", "
-                  + dt1.Rows[0][8].ToString();
+                    orname.Text =
+                      dt1.Rows[0][1].ToString() + " ИНН: "
+                    + dt1.Rows[0][2].ToString() + "  КПП: "
+                    + dt1.Rows[0][3].ToString() + " Адрес: "
+                    + dt1.Rows[0][4].ToString() + ", "
+                    + dt1.Rows[0][5].ToString() + ", "
+                    + dt1.Rows[0][6].ToString() + "\r\n"
+                    + dt1.Rows[0][7].ToString() + ",  Тел.: "
+                    + dt1.Rows[0][8].ToString() + ", р/с: "
+                    + dt1.Rows[0][9].ToString() + ", к/с: "
+                    + dt1.Rows[0][11].ToString() + ", БИК: "
+                    + dt1.Rows[0][10].ToString();
+                    orgokpo.Text = dt1.Rows[0][12].ToString();
+                    prokpo.Text = dt1.Rows[0][12].ToString();
                 }
 
                 conn.Close();
-                clname.Text = orname.Text;
+                prname.Text = orname.Text;
+            }
+            if (a != null)
+            {
+                conn.Open();
+                MySqlCommand cmd1 = new MySqlCommand("Select * From clients Where id= " + a, conn);
+                MySqlDataReader dr1 = cmd1.ExecuteReader();
+                DataTable dt1 = new DataTable();
+                dt1.Load(dr1);
+                if (dt1.Rows.Count > 0)
+                {
+                    clname.Text = dt1.Rows[0][1].ToString() + dt1.Rows[0][2].ToString() + dt1.Rows[0][3].ToString() +
+                      dt1.Rows[0][4].ToString() + " ИНН: "
+                    + dt1.Rows[0][5].ToString() + "  КПП: "
+                    + dt1.Rows[0][6].ToString() + "\r\n Адрес: "
+                    + dt1.Rows[0][12].ToString() + ", "
+                    + dt1.Rows[0][8].ToString() + ", "
+                    + dt1.Rows[0][9].ToString() + ", "
+                    + dt1.Rows[0][10].ToString() + ", "
+                    + dt1.Rows[0][11].ToString() + ", Тел.: "
+                    + dt1.Rows[0][15].ToString() + ", р/с: "
+                    + dt1.Rows[0][7].ToString();
+                }
+                conn.Close();
+                payname.Text = clname.Text;
+
             }
         }
 
