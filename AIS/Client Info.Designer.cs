@@ -70,28 +70,28 @@
             // 
             // Cname
             // 
-            this.Cname.Location = new System.Drawing.Point(79, 43);
+            this.Cname.Location = new System.Drawing.Point(94, 43);
             this.Cname.Name = "Cname";
             this.Cname.Size = new System.Drawing.Size(100, 20);
             this.Cname.TabIndex = 0;
             // 
             // Cpatr
             // 
-            this.Cpatr.Location = new System.Drawing.Point(79, 95);
+            this.Cpatr.Location = new System.Drawing.Point(94, 95);
             this.Cpatr.Name = "Cpatr";
             this.Cpatr.Size = new System.Drawing.Size(100, 20);
             this.Cpatr.TabIndex = 1;
             // 
             // Csurname
             // 
-            this.Csurname.Location = new System.Drawing.Point(79, 69);
+            this.Csurname.Location = new System.Drawing.Point(94, 69);
             this.Csurname.Name = "Csurname";
             this.Csurname.Size = new System.Drawing.Size(100, 20);
             this.Csurname.TabIndex = 2;
             // 
             // CCompname
             // 
-            this.CCompname.Location = new System.Drawing.Point(83, 43);
+            this.CCompname.Location = new System.Drawing.Point(98, 43);
             this.CCompname.Multiline = true;
             this.CCompname.Name = "CCompname";
             this.CCompname.Size = new System.Drawing.Size(392, 72);
@@ -101,7 +101,7 @@
             // Cclinum
             // 
             this.Cclinum.Enabled = false;
-            this.Cclinum.Location = new System.Drawing.Point(335, 4);
+            this.Cclinum.Location = new System.Drawing.Point(350, 4);
             this.Cclinum.Name = "Cclinum";
             this.Cclinum.Size = new System.Drawing.Size(140, 20);
             this.Cclinum.TabIndex = 4;
@@ -109,7 +109,7 @@
             // 
             // Cinn
             // 
-            this.Cinn.Location = new System.Drawing.Point(79, 134);
+            this.Cinn.Location = new System.Drawing.Point(94, 134);
             this.Cinn.MaxLength = 12;
             this.Cinn.Name = "Cinn";
             this.Cinn.Size = new System.Drawing.Size(186, 20);
@@ -118,7 +118,7 @@
             // 
             // Ckpp
             // 
-            this.Ckpp.Location = new System.Drawing.Point(79, 160);
+            this.Ckpp.Location = new System.Drawing.Point(94, 160);
             this.Ckpp.MaxLength = 9;
             this.Ckpp.Name = "Ckpp";
             this.Ckpp.Size = new System.Drawing.Size(186, 20);
@@ -127,7 +127,7 @@
             // 
             // Caccnum
             // 
-            this.Caccnum.Location = new System.Drawing.Point(79, 186);
+            this.Caccnum.Location = new System.Drawing.Point(94, 186);
             this.Caccnum.MaxLength = 20;
             this.Caccnum.Name = "Caccnum";
             this.Caccnum.Size = new System.Drawing.Size(186, 20);
@@ -136,21 +136,21 @@
             // 
             // Creg
             // 
-            this.Creg.Location = new System.Drawing.Point(79, 271);
+            this.Creg.Location = new System.Drawing.Point(94, 271);
             this.Creg.Name = "Creg";
             this.Creg.Size = new System.Drawing.Size(100, 20);
             this.Creg.TabIndex = 9;
             // 
             // Cstreet
             // 
-            this.Cstreet.Location = new System.Drawing.Point(79, 297);
+            this.Cstreet.Location = new System.Drawing.Point(94, 297);
             this.Cstreet.Name = "Cstreet";
             this.Cstreet.Size = new System.Drawing.Size(100, 20);
             this.Cstreet.TabIndex = 10;
             // 
             // Cadrs2
             // 
-            this.Cadrs2.Location = new System.Drawing.Point(79, 323);
+            this.Cadrs2.Location = new System.Drawing.Point(94, 323);
             this.Cadrs2.Multiline = true;
             this.Cadrs2.Name = "Cadrs2";
             this.Cadrs2.Size = new System.Drawing.Size(344, 39);
@@ -158,7 +158,7 @@
             // 
             // Cpcod
             // 
-            this.Cpcod.Location = new System.Drawing.Point(324, 293);
+            this.Cpcod.Location = new System.Drawing.Point(339, 293);
             this.Cpcod.Name = "Cpcod";
             this.Cpcod.Size = new System.Drawing.Size(100, 20);
             this.Cpcod.TabIndex = 12;
@@ -169,7 +169,7 @@
             this.Clegform.Items.AddRange(new object[] {
             "Entity",
             "Individual"});
-            this.Clegform.Location = new System.Drawing.Point(79, 4);
+            this.Clegform.Location = new System.Drawing.Point(94, 4);
             this.Clegform.Name = "Clegform";
             this.Clegform.Size = new System.Drawing.Size(121, 21);
             this.Clegform.TabIndex = 16;
@@ -314,7 +314,7 @@
             "Zaire",
             "Zambia",
             "Zimbabwe"});
-            this.Ccountr.Location = new System.Drawing.Point(79, 245);
+            this.Ccountr.Location = new System.Drawing.Point(94, 245);
             this.Ccountr.Name = "Ccountr";
             this.Ccountr.Size = new System.Drawing.Size(121, 21);
             this.Ccountr.TabIndex = 17;
@@ -323,7 +323,7 @@
             // Lab_Cname
             // 
             this.Lab_Cname.AutoSize = true;
-            this.Lab_Cname.Location = new System.Drawing.Point(38, 46);
+            this.Lab_Cname.Location = new System.Drawing.Point(53, 46);
             this.Lab_Cname.Name = "Lab_Cname";
             this.Lab_Cname.Size = new System.Drawing.Size(38, 13);
             this.Lab_Cname.TabIndex = 18;
@@ -332,7 +332,7 @@
             // Lab_Csurname
             // 
             this.Lab_Csurname.AutoSize = true;
-            this.Lab_Csurname.Location = new System.Drawing.Point(24, 72);
+            this.Lab_Csurname.Location = new System.Drawing.Point(39, 72);
             this.Lab_Csurname.Name = "Lab_Csurname";
             this.Lab_Csurname.Size = new System.Drawing.Size(52, 13);
             this.Lab_Csurname.TabIndex = 19;
@@ -341,7 +341,7 @@
             // Lab_Cpatr
             // 
             this.Lab_Cpatr.AutoSize = true;
-            this.Lab_Cpatr.Location = new System.Drawing.Point(15, 98);
+            this.Lab_Cpatr.Location = new System.Drawing.Point(30, 98);
             this.Lab_Cpatr.Name = "Lab_Cpatr";
             this.Lab_Cpatr.Size = new System.Drawing.Size(62, 13);
             this.Lab_Cpatr.TabIndex = 20;
@@ -350,7 +350,7 @@
             // Lab_CCompname
             // 
             this.Lab_CCompname.AutoSize = true;
-            this.Lab_CCompname.Location = new System.Drawing.Point(-1, 72);
+            this.Lab_CCompname.Location = new System.Drawing.Point(14, 72);
             this.Lab_CCompname.Name = "Lab_CCompname";
             this.Lab_CCompname.Size = new System.Drawing.Size(83, 13);
             this.Lab_CCompname.TabIndex = 21;
@@ -360,7 +360,7 @@
             // Lab_Cclinum
             // 
             this.Lab_Cclinum.AutoSize = true;
-            this.Lab_Cclinum.Location = new System.Drawing.Point(282, 7);
+            this.Lab_Cclinum.Location = new System.Drawing.Point(297, 7);
             this.Lab_Cclinum.Name = "Lab_Cclinum";
             this.Lab_Cclinum.Size = new System.Drawing.Size(50, 13);
             this.Lab_Cclinum.TabIndex = 22;
@@ -369,34 +369,34 @@
             // Lab_Cinn
             // 
             this.Lab_Cinn.AutoSize = true;
-            this.Lab_Cinn.Location = new System.Drawing.Point(47, 137);
+            this.Lab_Cinn.Location = new System.Drawing.Point(62, 137);
             this.Lab_Cinn.Name = "Lab_Cinn";
-            this.Lab_Cinn.Size = new System.Drawing.Size(29, 13);
+            this.Lab_Cinn.Size = new System.Drawing.Size(28, 13);
             this.Lab_Cinn.TabIndex = 23;
-            this.Lab_Cinn.Text = "INN:";
+            this.Lab_Cinn.Text = "ITN:";
             // 
             // Lab_Ckpp
             // 
             this.Lab_Ckpp.AutoSize = true;
-            this.Lab_Ckpp.Location = new System.Drawing.Point(45, 163);
+            this.Lab_Ckpp.Location = new System.Drawing.Point(60, 163);
             this.Lab_Ckpp.Name = "Lab_Ckpp";
-            this.Lab_Ckpp.Size = new System.Drawing.Size(31, 13);
+            this.Lab_Ckpp.Size = new System.Drawing.Size(27, 13);
             this.Lab_Ckpp.TabIndex = 24;
-            this.Lab_Ckpp.Text = "KPP:";
+            this.Lab_Ckpp.Text = "IEC:";
             // 
             // Lab_Caccnum
             // 
             this.Lab_Caccnum.AutoSize = true;
-            this.Lab_Caccnum.Location = new System.Drawing.Point(45, 189);
+            this.Lab_Caccnum.Location = new System.Drawing.Point(3, 189);
             this.Lab_Caccnum.Name = "Lab_Caccnum";
-            this.Lab_Caccnum.Size = new System.Drawing.Size(31, 13);
+            this.Lab_Caccnum.Size = new System.Drawing.Size(89, 13);
             this.Lab_Caccnum.TabIndex = 25;
-            this.Lab_Caccnum.Text = "ACC:";
+            this.Lab_Caccnum.Text = "Current account :";
             // 
             // Lab_Clegform
             // 
             this.Lab_Clegform.AutoSize = true;
-            this.Lab_Clegform.Location = new System.Drawing.Point(18, 8);
+            this.Lab_Clegform.Location = new System.Drawing.Point(33, 8);
             this.Lab_Clegform.Name = "Lab_Clegform";
             this.Lab_Clegform.Size = new System.Drawing.Size(59, 13);
             this.Lab_Clegform.TabIndex = 26;
@@ -405,7 +405,7 @@
             // Lab_Creg
             // 
             this.Lab_Creg.AutoSize = true;
-            this.Lab_Creg.Location = new System.Drawing.Point(32, 274);
+            this.Lab_Creg.Location = new System.Drawing.Point(47, 274);
             this.Lab_Creg.Name = "Lab_Creg";
             this.Lab_Creg.Size = new System.Drawing.Size(44, 13);
             this.Lab_Creg.TabIndex = 27;
@@ -414,7 +414,7 @@
             // Lab_Ccountr
             // 
             this.Lab_Ccountr.AutoSize = true;
-            this.Lab_Ccountr.Location = new System.Drawing.Point(31, 248);
+            this.Lab_Ccountr.Location = new System.Drawing.Point(46, 248);
             this.Lab_Ccountr.Name = "Lab_Ccountr";
             this.Lab_Ccountr.Size = new System.Drawing.Size(46, 13);
             this.Lab_Ccountr.TabIndex = 28;
@@ -423,7 +423,7 @@
             // Lab_Cstreet
             // 
             this.Lab_Cstreet.AutoSize = true;
-            this.Lab_Cstreet.Location = new System.Drawing.Point(38, 300);
+            this.Lab_Cstreet.Location = new System.Drawing.Point(53, 300);
             this.Lab_Cstreet.Name = "Lab_Cstreet";
             this.Lab_Cstreet.Size = new System.Drawing.Size(38, 13);
             this.Lab_Cstreet.TabIndex = 29;
@@ -432,7 +432,7 @@
             // Lab_Cadrs2
             // 
             this.Lab_Cadrs2.AutoSize = true;
-            this.Lab_Cadrs2.Location = new System.Drawing.Point(26, 337);
+            this.Lab_Cadrs2.Location = new System.Drawing.Point(41, 337);
             this.Lab_Cadrs2.Name = "Lab_Cadrs2";
             this.Lab_Cadrs2.Size = new System.Drawing.Size(51, 13);
             this.Lab_Cadrs2.TabIndex = 30;
@@ -441,7 +441,7 @@
             // Lab_Cpcod
             // 
             this.Lab_Cpcod.AutoSize = true;
-            this.Lab_Cpcod.Location = new System.Drawing.Point(227, 297);
+            this.Lab_Cpcod.Location = new System.Drawing.Point(242, 297);
             this.Lab_Cpcod.Name = "Lab_Cpcod";
             this.Lab_Cpcod.Size = new System.Drawing.Size(94, 13);
             this.Lab_Cpcod.TabIndex = 31;
@@ -450,7 +450,7 @@
             // Lab_Ctel
             // 
             this.Lab_Ctel.AutoSize = true;
-            this.Lab_Ctel.Location = new System.Drawing.Point(51, 371);
+            this.Lab_Ctel.Location = new System.Drawing.Point(66, 371);
             this.Lab_Ctel.Name = "Lab_Ctel";
             this.Lab_Ctel.Size = new System.Drawing.Size(25, 13);
             this.Lab_Ctel.TabIndex = 32;
@@ -459,7 +459,7 @@
             // Lab_Cfax
             // 
             this.Lab_Cfax.AutoSize = true;
-            this.Lab_Cfax.Location = new System.Drawing.Point(210, 372);
+            this.Lab_Cfax.Location = new System.Drawing.Point(225, 372);
             this.Lab_Cfax.Name = "Lab_Cfax";
             this.Lab_Cfax.Size = new System.Drawing.Size(27, 13);
             this.Lab_Cfax.TabIndex = 33;
@@ -468,7 +468,7 @@
             // Lab_Ccur
             // 
             this.Lab_Ccur.AutoSize = true;
-            this.Lab_Ccur.Location = new System.Drawing.Point(286, 162);
+            this.Lab_Ccur.Location = new System.Drawing.Point(301, 162);
             this.Lab_Ccur.Name = "Lab_Ccur";
             this.Lab_Ccur.Size = new System.Drawing.Size(52, 13);
             this.Lab_Ccur.TabIndex = 34;
@@ -479,14 +479,14 @@
             this.Ccur.FormattingEnabled = true;
             this.Ccur.Items.AddRange(new object[] {
             "RUB"});
-            this.Ccur.Location = new System.Drawing.Point(344, 159);
+            this.Ccur.Location = new System.Drawing.Point(359, 159);
             this.Ccur.Name = "Ccur";
             this.Ccur.Size = new System.Drawing.Size(80, 21);
             this.Ccur.TabIndex = 38;
             // 
             // But_CIcancel
             // 
-            this.But_CIcancel.Location = new System.Drawing.Point(349, 404);
+            this.But_CIcancel.Location = new System.Drawing.Point(364, 404);
             this.But_CIcancel.Name = "But_CIcancel";
             this.But_CIcancel.Size = new System.Drawing.Size(75, 23);
             this.But_CIcancel.TabIndex = 39;
@@ -496,7 +496,7 @@
             // 
             // But_CIcreate
             // 
-            this.But_CIcreate.Location = new System.Drawing.Point(79, 404);
+            this.But_CIcreate.Location = new System.Drawing.Point(94, 404);
             this.But_CIcreate.Name = "But_CIcreate";
             this.But_CIcreate.Size = new System.Drawing.Size(75, 23);
             this.But_CIcreate.TabIndex = 40;
@@ -507,7 +507,7 @@
             // Lab_Cemail
             // 
             this.Lab_Cemail.AutoSize = true;
-            this.Lab_Cemail.Location = new System.Drawing.Point(283, 251);
+            this.Lab_Cemail.Location = new System.Drawing.Point(298, 251);
             this.Lab_Cemail.Name = "Lab_Cemail";
             this.Lab_Cemail.Size = new System.Drawing.Size(37, 13);
             this.Lab_Cemail.TabIndex = 42;
@@ -515,14 +515,14 @@
             // 
             // Cemail
             // 
-            this.Cemail.Location = new System.Drawing.Point(323, 248);
+            this.Cemail.Location = new System.Drawing.Point(338, 248);
             this.Cemail.Name = "Cemail";
             this.Cemail.Size = new System.Drawing.Size(100, 20);
             this.Cemail.TabIndex = 43;
             // 
             // Ctel
             // 
-            this.Ctel.Location = new System.Drawing.Point(83, 368);
+            this.Ctel.Location = new System.Drawing.Point(98, 368);
             this.Ctel.Name = "Ctel";
             this.Ctel.Size = new System.Drawing.Size(100, 20);
             this.Ctel.TabIndex = 45;
@@ -531,7 +531,7 @@
             // 
             // Cfax
             // 
-            this.Cfax.Location = new System.Drawing.Point(238, 369);
+            this.Cfax.Location = new System.Drawing.Point(253, 369);
             this.Cfax.Name = "Cfax";
             this.Cfax.Size = new System.Drawing.Size(100, 20);
             this.Cfax.TabIndex = 46;
@@ -541,7 +541,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(487, 439);
+            this.ClientSize = new System.Drawing.Size(513, 439);
             this.ControlBox = false;
             this.Controls.Add(this.Cfax);
             this.Controls.Add(this.Ctel);
