@@ -45,9 +45,6 @@ namespace AIS
 
         private void orn(string a)
         {
-            string s;
-
-
             if (a != null)
             {
                 conn.Open();

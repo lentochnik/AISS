@@ -25,12 +25,15 @@ namespace AIS
             {
                 adminToolStripMenuItem.Enabled = false;
                 adminToolStripMenuItem.Visible = false;
-                
+                companyInfoToolStripMenuItem.Enabled = false;
+                companyInfoToolStripMenuItem.Visible = false;
             }
             else
             {
                 adminToolStripMenuItem.Enabled = true;
                 adminToolStripMenuItem.Visible = true;
+                companyInfoToolStripMenuItem.Enabled = true;
+                companyInfoToolStripMenuItem.Visible = true;
 
             }
 
@@ -127,6 +130,13 @@ namespace AIS
             Settings settings = new Settings();
             settings.MdiParent = this;
             settings.Show();
+        }
+
+        private void companyInfoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            firminf finf = new firminf();
+            finf.MdiParent = this;
+            finf.Show();
         }
     }
 }

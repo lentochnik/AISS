@@ -49,6 +49,7 @@
             this.accountManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configurationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.companyInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -166,7 +167,8 @@
             // toolsToolStripMenuItem
             // 
             this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.configurationToolStripMenuItem});
+            this.configurationToolStripMenuItem,
+            this.companyInfoToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             resources.ApplyResources(this.toolsToolStripMenuItem, "toolsToolStripMenuItem");
             // 
@@ -175,6 +177,12 @@
             this.configurationToolStripMenuItem.Name = "configurationToolStripMenuItem";
             resources.ApplyResources(this.configurationToolStripMenuItem, "configurationToolStripMenuItem");
             this.configurationToolStripMenuItem.Click += new System.EventHandler(this.configurationToolStripMenuItem_Click);
+            // 
+            // companyInfoToolStripMenuItem
+            // 
+            this.companyInfoToolStripMenuItem.Name = "companyInfoToolStripMenuItem";
+            resources.ApplyResources(this.companyInfoToolStripMenuItem, "companyInfoToolStripMenuItem");
+            this.companyInfoToolStripMenuItem.Click += new System.EventHandler(this.companyInfoToolStripMenuItem_Click);
             // 
             // AISS
             // 
@@ -220,6 +228,7 @@
         private System.Windows.Forms.ToolStripMenuItem addInvoiceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem strorageToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem companyInfoToolStripMenuItem;
     }
 }
 
