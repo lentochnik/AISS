@@ -23,25 +23,32 @@ namespace AIS
             textBox1.Text = a;
             if (a != null)
             {
-                conn.Open();
-                MySqlCommand cmd1 = new MySqlCommand("Select * From clients Where Id= '" + a + "'", conn);
-                MySqlDataReader dr1 = cmd1.ExecuteReader();
-                DataTable dt1 = new DataTable();
-                dt1.Load(dr1);
-                if (dt1.Rows.Count > 0)
-                {
-                    textBox2.Text = dt1.Rows[0][1].ToString();
-                    textBox3.Text = dt1.Rows[0][2].ToString();
-                    textBox4.Text = dt1.Rows[0][3].ToString();
-                    textBox5.Text = dt1.Rows[0][12].ToString() + "\r\n" + dt1.Rows[0][10].ToString() + ", " + dt1.Rows[0][11].ToString() + ",\r\n" + dt1.Rows[0][9].ToString() + ",\r\n" + dt1.Rows[0][8].ToString();
-                    val = dt1.Rows[0][17].ToString();
-                  string amm = dt1.Rows[0][18].ToString();
-                    am = Convert.ToDouble(amm);
-                    label1.Text = am.ToString() + " " + val;
-                }
+                try {
+                    conn.Open();
+                    MySqlCommand cmd1 = new MySqlCommand("Select * From clients Where Id= '" + a + "'", conn);
+                    MySqlDataReader dr1 = cmd1.ExecuteReader();
+                    DataTable dt1 = new DataTable();
+                    dt1.Load(dr1);
+                    if (dt1.Rows.Count > 0)
+                    {
+                        textBox2.Text = dt1.Rows[0][1].ToString();
+                        textBox3.Text = dt1.Rows[0][2].ToString();
+                        textBox4.Text = dt1.Rows[0][3].ToString();
+                        textBox12.Text = dt1.Rows[0][4].ToString();
+                        textBox5.Text = dt1.Rows[0][12].ToString() + "\r\n" + dt1.Rows[0][10].ToString() + ", " + dt1.Rows[0][11].ToString() + ",\r\n" + dt1.Rows[0][9].ToString() + ",\r\n" + dt1.Rows[0][8].ToString();
+                        val = dt1.Rows[0][17].ToString();
+                        string amm = dt1.Rows[0][18].ToString();
+                        am = Convert.ToDouble(amm);
+                        label1.Text = am.ToString() + " " + val;
+                    }
 
-                conn.Close();
-                data_ad();
+                    conn.Close();
+                    data_ad();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 
@@ -79,32 +86,39 @@ namespace AIS
 
         private void data_ad()
         {
+            try { 
 
             conn.Open();
             MySqlCommand cmd = new MySqlCommand("Select * From stor", conn);
             MySqlDataReader dr = cmd.ExecuteReader();
             DataTable dt = new DataTable();
             dt.Load(dr);
-            if (dt.Rows.Count > 0)
+                if (dt.Rows.Count > 0)
+                {
+                    for (int i = 0; i < dt.Columns.Count - 1; i++)
+                    {
+                        dataGridView1.Columns.Add(dt.Columns[i].Caption, dt.Columns[i].Caption);
+                    }
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        if (dataGridView1.Rows.Count < dt.Rows.Count)
+                        {
+                            dataGridView1.Rows.Add();
+                        }
+                        for (int j = 0; j < dt.Columns.Count - 1; j++)
+                        {
+
+                            dataGridView1.Rows[i].Cells[j].Value = dt.Rows[i][j].ToString();
+                        }
+
+                    }
+                    conn.Close();
+
+                }
+            }
+            catch (Exception ex)
             {
-                for (int i = 0; i < dt.Columns.Count - 1; i++)
-                {
-                    dataGridView1.Columns.Add(dt.Columns[i].Caption, dt.Columns[i].Caption);
-                }
-                for (int i = 0; i < dt.Rows.Count; i++)
-                {
-                    if (dataGridView1.Rows.Count < dt.Rows.Count)
-                    {
-                        dataGridView1.Rows.Add();
-                    }
-                    for (int j = 0; j < dt.Columns.Count - 1; j++)
-                    {
-
-                        dataGridView1.Rows[i].Cells[j].Value = dt.Rows[i][j].ToString();
-                    }
-
-                }
-                conn.Close();
+                MessageBox.Show(ex.Message);
             }
         }
         int sta;
@@ -147,59 +161,66 @@ namespace AIS
 
         private void button2_Click(object sender, EventArgs e)
         {
+         try {
             if (Convert.ToInt32(textBox11.Text) < Convert.ToInt32(textBox8.Text))
 
             {
-                double nd = Convert.ToDouble(textBox9.Text) * Convert.ToDouble(textBox11.Text);
-                double a = Convert.ToDouble(textBox9.Text);
-                double b = Convert.ToDouble(textBox10.Text);
-                double c = (b * (a / 100));
-                a = (a + c) * Convert.ToDouble(textBox11.Text);
-                c = c * Convert.ToDouble(textBox11.Text);
-                double ab = a;
-                sumextr(ab);
-                MySqlCommand cmd;
-                string CmdString = "Insert Into orders (product, idProd, name, quantity, pice, sumnnds, nds, ndssumm, total, idclient, Invcr)Values(@product, @idProd, @name, @quantity, @pice, @sumnnds, @nds, @ndssumm, @total, @idclient, @Invcr)";
-                cmd = new MySqlCommand(CmdString, conn);
+               
 
-                cmd.Parameters.Add("@product", MySqlDbType.VarChar, 255);
-                cmd.Parameters.Add("@idProd", MySqlDbType.Int32, 11);
-                cmd.Parameters.Add("@name", MySqlDbType.VarChar, 45);
-                cmd.Parameters.Add("@quantity", MySqlDbType.Int32, 11);
-                cmd.Parameters.Add("@pice", MySqlDbType.Decimal, 12);
-                cmd.Parameters.Add("@sumnnds", MySqlDbType.Decimal, 12);
-                cmd.Parameters.Add("@nds", MySqlDbType.Decimal, 12);
-                cmd.Parameters.Add("@ndssumm", MySqlDbType.Decimal, 12);
-                cmd.Parameters.Add("@total", MySqlDbType.Decimal, 12);
-                cmd.Parameters.Add("@idclient", MySqlDbType.VarChar, 255);
-                cmd.Parameters.Add("@Invcr", MySqlDbType.Int16, 2);
+                    double nd = Convert.ToDouble(textBox9.Text) * Convert.ToDouble(textBox11.Text);
+                    double a = Convert.ToDouble(textBox9.Text);
+                    double b = Convert.ToDouble(textBox10.Text);
+                    double c = (b * (a / 100));
+                    a = (a + c) * Convert.ToDouble(textBox11.Text);
+                    c = c * Convert.ToDouble(textBox11.Text);
+                    double ab = a;
+                    if (sumextr(ab))
+                    {
+                        MySqlCommand cmd;
+                        string CmdString = "Insert Into orders (product, idProd, name, quantity, pice, sumnnds, nds, ndssumm, total, idclient, Invcr)Values(@product, @idProd, @name, @quantity, @pice, @sumnnds, @nds, @ndssumm, @total, @idclient, @Invcr)";
+                        cmd = new MySqlCommand(CmdString, conn);
 
-                cmd.Parameters["@product"].Value = textBox7.Text;
-                cmd.Parameters["@idProd"].Value = textBox6.Text;
-                cmd.Parameters["@name"].Value = textBox7.Text;
-                cmd.Parameters["@quantity"].Value = textBox11.Text;
-                
-                cmd.Parameters["@pice"].Value = textBox9.Text;
-                cmd.Parameters["@sumnnds"].Value = nd;
-                cmd.Parameters["@nds"].Value = textBox10.Text;
-                cmd.Parameters["@ndssumm"].Value = c;
-                cmd.Parameters["@total"].Value = a;
-                cmd.Parameters["@idclient"].Value = textBox1.Text;
-                cmd.Parameters["@Invcr"].Value = 0;
+                        cmd.Parameters.Add("@product", MySqlDbType.VarChar, 255);
+                        cmd.Parameters.Add("@idProd", MySqlDbType.Int32, 11);
+                        cmd.Parameters.Add("@name", MySqlDbType.VarChar, 45);
+                        cmd.Parameters.Add("@quantity", MySqlDbType.Int32, 11);
+                        cmd.Parameters.Add("@pice", MySqlDbType.Decimal, 12);
+                        cmd.Parameters.Add("@sumnnds", MySqlDbType.Decimal, 12);
+                        cmd.Parameters.Add("@nds", MySqlDbType.Decimal, 12);
+                        cmd.Parameters.Add("@ndssumm", MySqlDbType.Decimal, 12);
+                        cmd.Parameters.Add("@total", MySqlDbType.Decimal, 12);
+                        cmd.Parameters.Add("@idclient", MySqlDbType.VarChar, 255);
+                        cmd.Parameters.Add("@Invcr", MySqlDbType.Int16, 2);
 
-                conn.Open();
+                        cmd.Parameters["@product"].Value = textBox7.Text;
+                        cmd.Parameters["@idProd"].Value = textBox6.Text;
+                        cmd.Parameters["@name"].Value = textBox7.Text;
+                        cmd.Parameters["@quantity"].Value = textBox11.Text;
+
+                        cmd.Parameters["@pice"].Value = textBox9.Text;
+                        cmd.Parameters["@sumnnds"].Value = nd;
+                        cmd.Parameters["@nds"].Value = textBox10.Text;
+                        cmd.Parameters["@ndssumm"].Value = c;
+                        cmd.Parameters["@total"].Value = a;
+                        cmd.Parameters["@idclient"].Value = textBox1.Text;
+                        cmd.Parameters["@Invcr"].Value = 0;
+
+                        conn.Open();
 
 
-                int RowsAffected = cmd.ExecuteNonQuery();
+                        int RowsAffected = cmd.ExecuteNonQuery();
 
 
-                if (RowsAffected > 0)
-                {
+                        if (RowsAffected > 0)
+                        {
 
-                    conn.Close();
+                            conn.Close();
 
-                }
-            }
+                        }
+
+
+                    }
+        }
             else
             {
                 MessageBox.Show
@@ -213,68 +234,82 @@ namespace AIS
                 );
             }
         }
-
-
-        private void sumextr(double a)
-        {
-        if(am != 0)
+              catch (Exception ex)
             {
-                if (am > a)
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+
+        private bool sumextr(double a)
+        {
+            try {
+                if (am != 0)
                 {
-                    if (sta >= Convert.ToInt32(textBox11.Text))
+                    if (am > a)
+                    {
+                        if (sta >= Convert.ToInt32(textBox11.Text))
                         {
-                        am -= a;
-                        sta -= Convert.ToInt32(textBox11.Text);
-                        dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[2].Value = sta;
-                        dataGridView1.Refresh();
-                        label1.Text = am.ToString() + " " + val;
-                        textBox8.Text = sta.ToString();
-                        conn.Open();
-                        MySqlCommand cmd = new MySqlCommand("Update clients Set accounamoun='" + Convert1(am.ToString()) + "' Where Id ='" + textBox1.Text + "'", conn);
-                        cmd.ExecuteNonQuery();
-                        cmd = new MySqlCommand("Update stor Set quantity='" + sta + "' Where idStor='" + textBox6.Text + "'", conn);
-                        cmd.ExecuteNonQuery();
-                        conn.Close();
-                        dataGridView1.Refresh();
-                        MessageBox.Show
-                           (
-                             String.Format("Added to order"),
-                             "Information",
-                             MessageBoxButtons.OK,
-                             MessageBoxIcon.Information,
-                             MessageBoxDefaultButton.Button1,
-                             MessageBoxOptions.DefaultDesktopOnly
-                             );
+                            am -= a;
+                            sta -= Convert.ToInt32(textBox11.Text);
+                            dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[2].Value = sta;
+                            dataGridView1.Refresh();
+                            label1.Text = am.ToString() + " " + val;
+                            textBox8.Text = sta.ToString();
+                            conn.Open();
+                            MySqlCommand cmd = new MySqlCommand("Update clients Set accounamoun='" + Convert1(am.ToString()) + "' Where Id ='" + textBox1.Text + "'", conn);
+                            cmd.ExecuteNonQuery();
+                            cmd = new MySqlCommand("Update stor Set quantity='" + sta + "' Where idStor='" + textBox6.Text + "'", conn);
+                            cmd.ExecuteNonQuery();
+                            conn.Close();
+                            dataGridView1.Refresh();
+                            MessageBox.Show
+                               (
+                                 String.Format("Added to order"),
+                                 "Information",
+                                 MessageBoxButtons.OK,
+                                 MessageBoxIcon.Information,
+                                 MessageBoxDefaultButton.Button1,
+                                 MessageBoxOptions.DefaultDesktopOnly
+                                 );
+                            return true;
+                        }
                     }
+                    else
+                    {
+                        MessageBox.Show
+                 (
+                   String.Format("The customer's account is not sufficient amount"),
+                   "Error",
+                   MessageBoxButtons.OK,
+                   MessageBoxIcon.Error,
+                   MessageBoxDefaultButton.Button1,
+                   MessageBoxOptions.DefaultDesktopOnly
+                   );
+                    }
+                    return false;
                 }
                 else
                 {
                     MessageBox.Show
-             (
-               String.Format("The customer's account is not sufficient amount"),
-               "Error",
-               MessageBoxButtons.OK,
-               MessageBoxIcon.Error,
-               MessageBoxDefaultButton.Button1,
-               MessageBoxOptions.DefaultDesktopOnly
-               );
+                (
+                  String.Format("The customer's account is not sufficient amount"),
+                  "Error",
+                  MessageBoxButtons.OK,
+                  MessageBoxIcon.Error,
+                  MessageBoxDefaultButton.Button1,
+                  MessageBoxOptions.DefaultDesktopOnly
+                  );
+                    return false;
                 }
-
             }
-        else
+            catch (Exception ex)
             {
-                MessageBox.Show
-            (
-              String.Format("The customer's account is not sufficient amount"),
-              "Error",
-              MessageBoxButtons.OK,
-              MessageBoxIcon.Error,
-              MessageBoxDefaultButton.Button1,
-              MessageBoxOptions.DefaultDesktopOnly
-              );
+                MessageBox.Show(ex.Message);
+                return false;
             }
-        }
 
+        }
         public object Convert1(object value)
         {
             return value.ToString().Replace(",", ".");

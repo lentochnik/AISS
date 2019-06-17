@@ -16,14 +16,14 @@ namespace AIS
     {
         int d = 1;
         MySqlConnection conn = Param.GetDBConnection();
-
+        string b;
         public Invoce(string a)
         {
             InitializeComponent();
             SetReadonlyControls(gb1.Controls);
             printDocument1.DefaultPageSettings.Landscape = true;
             dataGridView1.ColumnHeadersVisible = false;
-           
+            b = a;
             data_cret(a);
             orn(a);
             d -= 1;
@@ -41,40 +41,55 @@ namespace AIS
             invdate.Text = s4;
             textBox12.Text = s4;
             textBox10.Text = s4;
+            int ca = 0;
+            Random rnd = new Random();
+            ca = rnd.Next(100);
+            string s9 = a;
+            s9 = s9.Substring(9,5);
+            string s8= ca + s9 + DateTime.Now.ToString("dd");
+            num.Text = s8;
         }
 
         private void orn(string a)
         {
-            if (a != null)
+            if (true)
             {
-                conn.Open();
-                MySqlCommand cmd1 = new MySqlCommand("Select * From cominfo Where id= 1", conn);
-                MySqlDataReader dr1 = cmd1.ExecuteReader();
-                DataTable dt1 = new DataTable();
-                dt1.Load(dr1);
-                if (dt1.Rows.Count > 0)
+                try
                 {
-                    orname.Text =
-                      dt1.Rows[0][1].ToString() + " ИНН: "
-                    + dt1.Rows[0][2].ToString() + "  КПП: "
-                    + dt1.Rows[0][3].ToString() + " Адрес: "
-                    + dt1.Rows[0][4].ToString() + ", "
-                    + dt1.Rows[0][5].ToString() + ", "
-                    + dt1.Rows[0][6].ToString() + "\r\n"
-                    + dt1.Rows[0][7].ToString() + ",  Тел.: "
-                    + dt1.Rows[0][8].ToString() + ", р/с: "
-                    + dt1.Rows[0][9].ToString() + ", к/с: "
-                    + dt1.Rows[0][11].ToString() + ", БИК: "
-                    + dt1.Rows[0][10].ToString();
-                    orgokpo.Text = dt1.Rows[0][12].ToString();
-                    prokpo.Text = dt1.Rows[0][12].ToString();
-                }
+                    conn.Open();
+                    MySqlCommand cmd1 = new MySqlCommand("Select * From cominfo Where id= 1", conn);
+                    MySqlDataReader dr1 = cmd1.ExecuteReader();
+                    DataTable dt1 = new DataTable();
+                    dt1.Load(dr1);
+                    if (dt1.Rows.Count > 0)
+                    {
+                        orname.Text =
+                          dt1.Rows[0][1].ToString() + " ИНН: "
+                        + dt1.Rows[0][2].ToString() + "  КПП: "
+                        + dt1.Rows[0][3].ToString() + " Адрес: "
+                        + dt1.Rows[0][4].ToString() + ", "
+                        + dt1.Rows[0][5].ToString() + ", "
+                        + dt1.Rows[0][6].ToString() + "\r\n"
+                        + dt1.Rows[0][7].ToString() + ",  Тел.: "
+                        + dt1.Rows[0][8].ToString() + ", р/с: "
+                        + dt1.Rows[0][9].ToString() + ", к/с: "
+                        + dt1.Rows[0][11].ToString() + ", БИК: "
+                        + dt1.Rows[0][10].ToString();
+                        orgokpo.Text = dt1.Rows[0][12].ToString();
+                        prokpo.Text = dt1.Rows[0][12].ToString();
+                    }
 
-                conn.Close();
-                prname.Text = orname.Text;
+                    conn.Close();
+                    prname.Text = orname.Text;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
             if (a != null)
             {
+                try { 
                 conn.Open();
                 MySqlCommand cmd1 = new MySqlCommand("Select * From clients Where id= " + a, conn);
                 MySqlDataReader dr1 = cmd1.ExecuteReader();
@@ -96,7 +111,11 @@ namespace AIS
                 }
                 conn.Close();
                 payname.Text = clname.Text;
-
+            }
+                 catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 
@@ -105,31 +124,39 @@ namespace AIS
 
             if (a != null)
             {
-                conn.Open();
-                MySqlCommand cmd = new MySqlCommand("Select * From orders where idclient='" + a + "' and Invcr='0'", conn);
-                MySqlDataReader dr = cmd.ExecuteReader();
-                DataTable dt = new DataTable();
-                dt.Load(dr);
-                if (dt.Rows.Count > 0)
+                try
                 {
-                    
-                    for (int i = 0; i < dt.Rows.Count; i++)
+                    conn.Open();
+                    MySqlCommand cmd = new MySqlCommand("Select * From orders where idclient='" + a + "' and Invcr='0'", conn);
+                    MySqlDataReader dr = cmd.ExecuteReader();
+                    DataTable dt = new DataTable();
+                    dt.Load(dr);
+                    if (dt.Rows.Count > 0)
                     {
+
+                        for (int i = 0; i < dt.Rows.Count; i++)
+                        {
+
+                            if (dataGridView1.Rows.Count < dt.Rows.Count)
+                            {
+                                dataGridView1.Rows.Add();
+                                dataGridView1.Rows[i].Cells[0].Value = d;
+                                d++;
+                            }
+                            for (int j = 1; j < dt.Columns.Count - 2; j++)
+                            {
+
+                                dataGridView1.Rows[i].Cells[j].Value = dt.Rows[i][j].ToString();
+                            }
+
+                        }
                         
-                        if (dataGridView1.Rows.Count < dt.Rows.Count)
-                        {
-                            dataGridView1.Rows.Add();
-                            dataGridView1.Rows[i].Cells[0].Value = d;
-                            d++;
-                        }
-                        for (int j = 1; j < dt.Columns.Count -2; j++)
-                        {
-
-                            dataGridView1.Rows[i].Cells[j].Value = dt.Rows[i][j].ToString();
-                        }
-
                     }
-                    conn.Close();
+                 conn.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
                 }
 
             }
@@ -829,6 +856,38 @@ namespace AIS
         private void label57_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void invoceCreate_Click(object sender, EventArgs e)
+        {
+            if (b != null)
+            {
+                try
+                {
+                    conn.Open();
+                    MySqlCommand cmd = new MySqlCommand("Update  orders Set Invcr= 1 where idclient='" + b + "' and Invcr='0'", conn);
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                    MessageBox.Show
+         (
+           String.Format("Invoce saved"),
+           "Invoce saved",
+           MessageBoxButtons.OK,
+           MessageBoxIcon.Information,
+           MessageBoxDefaultButton.Button1,
+           MessageBoxOptions.DefaultDesktopOnly
+           );
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            dataGridView1.ClearSelection();
         }
     }
 }

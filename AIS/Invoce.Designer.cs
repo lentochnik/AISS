@@ -111,6 +111,21 @@
             this.textBox54 = new System.Windows.Forms.TextBox();
             this.textBox55 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.numt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tovar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.naimen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.okey = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.upak = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vodnom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mest = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.brutto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.netto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cena = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nds = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sumnds = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.summsnds = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
@@ -155,6 +170,9 @@
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.button1 = new System.Windows.Forms.Button();
             this.gb1 = new System.Windows.Forms.GroupBox();
+            this.payname = new System.Windows.Forms.Label();
+            this.clname = new System.Windows.Forms.Label();
+            this.prname = new System.Windows.Forms.Label();
             this.label59 = new System.Windows.Forms.Label();
             this.label57 = new System.Windows.Forms.Label();
             this.label56 = new System.Windows.Forms.Label();
@@ -162,24 +180,7 @@
             this.label54 = new System.Windows.Forms.Label();
             this.bas = new System.Windows.Forms.Label();
             this.orname = new System.Windows.Forms.Label();
-            this.numt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tovar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.naimen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.okey = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.upak = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vodnom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mest = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.brutto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.netto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cena = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nds = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sumnds = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.summsnds = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.payname = new System.Windows.Forms.Label();
-            this.prname = new System.Windows.Forms.Label();
-            this.clname = new System.Windows.Forms.Label();
+            this.invoceCreate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -508,7 +509,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.SystemColors.Window;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(294, 272);
+            this.label6.Location = new System.Drawing.Point(288, 273);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(204, 18);
             this.label6.TabIndex = 27;
@@ -659,7 +660,7 @@
             // num
             // 
             this.num.BackColor = System.Drawing.SystemColors.Window;
-            this.num.Location = new System.Drawing.Point(504, 273);
+            this.num.Location = new System.Drawing.Point(502, 273);
             this.num.Name = "num";
             this.num.Size = new System.Drawing.Size(114, 20);
             this.num.TabIndex = 40;
@@ -669,9 +670,9 @@
             // textBox19
             // 
             this.textBox19.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox19.Location = new System.Drawing.Point(504, 254);
+            this.textBox19.Location = new System.Drawing.Point(502, 254);
             this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(114, 20);
+            this.textBox19.Size = new System.Drawing.Size(116, 20);
             this.textBox19.TabIndex = 41;
             this.textBox19.Text = "Номер документа\t";
             this.textBox19.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1183,6 +1184,7 @@
             this.summsnds});
             this.dataGridView1.GridColor = System.Drawing.Color.Black;
             this.dataGridView1.Location = new System.Drawing.Point(36, 408);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
@@ -1190,10 +1192,121 @@
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView1.RowTemplate.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.ShowCellErrors = false;
+            this.dataGridView1.ShowCellToolTips = false;
             this.dataGridView1.ShowEditingIcon = false;
+            this.dataGridView1.ShowRowErrors = false;
             this.dataGridView1.Size = new System.Drawing.Size(1069, 136);
             this.dataGridView1.TabIndex = 81;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
+            // 
+            // numt
+            // 
+            this.numt.HeaderText = "numt";
+            this.numt.MaxInputLength = 10;
+            this.numt.Name = "numt";
+            this.numt.ReadOnly = true;
+            this.numt.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.numt.Width = 27;
+            // 
+            // tovar
+            // 
+            this.tovar.HeaderText = "tovar";
+            this.tovar.Name = "tovar";
+            this.tovar.ReadOnly = true;
+            this.tovar.Width = 309;
+            // 
+            // code
+            // 
+            this.code.HeaderText = "code";
+            this.code.Name = "code";
+            this.code.ReadOnly = true;
+            this.code.Width = 28;
+            // 
+            // naimen
+            // 
+            this.naimen.HeaderText = "naimen";
+            this.naimen.Name = "naimen";
+            this.naimen.ReadOnly = true;
+            this.naimen.Width = 47;
+            // 
+            // okey
+            // 
+            this.okey.HeaderText = "okey";
+            this.okey.Name = "okey";
+            this.okey.ReadOnly = true;
+            this.okey.Width = 35;
+            // 
+            // upak
+            // 
+            this.upak.HeaderText = "upak";
+            this.upak.Name = "upak";
+            this.upak.ReadOnly = true;
+            this.upak.Width = 28;
+            // 
+            // vodnom
+            // 
+            this.vodnom.HeaderText = "vodnom";
+            this.vodnom.Name = "vodnom";
+            this.vodnom.ReadOnly = true;
+            this.vodnom.Width = 42;
+            // 
+            // mest
+            // 
+            this.mest.HeaderText = "mest";
+            this.mest.Name = "mest";
+            this.mest.ReadOnly = true;
+            this.mest.Width = 35;
+            // 
+            // brutto
+            // 
+            this.brutto.HeaderText = "brutto";
+            this.brutto.Name = "brutto";
+            this.brutto.ReadOnly = true;
+            this.brutto.Width = 30;
+            // 
+            // netto
+            // 
+            this.netto.HeaderText = "netto";
+            this.netto.Name = "netto";
+            this.netto.ReadOnly = true;
+            this.netto.Width = 46;
+            // 
+            // cena
+            // 
+            this.cena.HeaderText = "cena";
+            this.cena.Name = "cena";
+            this.cena.ReadOnly = true;
+            this.cena.Width = 78;
+            // 
+            // sum
+            // 
+            this.sum.HeaderText = "sum";
+            this.sum.Name = "sum";
+            this.sum.ReadOnly = true;
+            this.sum.Width = 90;
+            // 
+            // nds
+            // 
+            this.nds.HeaderText = "nds";
+            this.nds.Name = "nds";
+            this.nds.ReadOnly = true;
+            this.nds.Width = 58;
+            // 
+            // sumnds
+            // 
+            this.sumnds.HeaderText = "sumnds";
+            this.sumnds.Name = "sumnds";
+            this.sumnds.ReadOnly = true;
+            this.sumnds.Width = 90;
+            // 
+            // summsnds
+            // 
+            this.summsnds.HeaderText = "summsnds";
+            this.summsnds.Name = "summsnds";
+            this.summsnds.ReadOnly = true;
+            this.summsnds.Width = 124;
             // 
             // dataGridView2
             // 
@@ -1303,7 +1416,7 @@
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(33, 629);
+            this.label31.Location = new System.Drawing.Point(33, 623);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(383, 13);
             this.label31.TabIndex = 93;
@@ -1327,7 +1440,7 @@
             this.label32.BackColor = System.Drawing.Color.White;
             this.label32.Font = new System.Drawing.Font("Arial Narrow", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(210)), true);
             this.label32.ForeColor = System.Drawing.Color.Black;
-            this.label32.Location = new System.Drawing.Point(221, 642);
+            this.label32.Location = new System.Drawing.Point(221, 636);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(46, 13);
             this.label32.TabIndex = 95;
@@ -1801,6 +1914,38 @@
             this.gb1.TabStop = false;
             this.gb1.Enter += new System.EventHandler(this.gb1_Enter);
             // 
+            // payname
+            // 
+            this.payname.AutoSize = true;
+            this.payname.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.payname.Location = new System.Drawing.Point(135, 179);
+            this.payname.Name = "payname";
+            this.payname.Size = new System.Drawing.Size(29, 9);
+            this.payname.TabIndex = 132;
+            this.payname.Text = "label57";
+            this.payname.Click += new System.EventHandler(this.label57_Click);
+            // 
+            // clname
+            // 
+            this.clname.AutoSize = true;
+            this.clname.BackColor = System.Drawing.Color.White;
+            this.clname.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.clname.Location = new System.Drawing.Point(134, 127);
+            this.clname.Name = "clname";
+            this.clname.Size = new System.Drawing.Size(29, 9);
+            this.clname.TabIndex = 130;
+            this.clname.Text = "label55";
+            // 
+            // prname
+            // 
+            this.prname.AutoSize = true;
+            this.prname.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.prname.Location = new System.Drawing.Point(135, 156);
+            this.prname.Name = "prname";
+            this.prname.Size = new System.Drawing.Size(29, 9);
+            this.prname.TabIndex = 131;
+            this.prname.Text = "label56";
+            // 
             // label59
             // 
             this.label59.AutoSize = true;
@@ -1866,144 +2011,15 @@
             this.orname.TabIndex = 129;
             this.orname.Text = "label54";
             // 
-            // numt
+            // invoceCreate
             // 
-            this.numt.HeaderText = "numt";
-            this.numt.MaxInputLength = 10;
-            this.numt.Name = "numt";
-            this.numt.ReadOnly = true;
-            this.numt.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.numt.Width = 27;
-            // 
-            // tovar
-            // 
-            this.tovar.HeaderText = "tovar";
-            this.tovar.Name = "tovar";
-            this.tovar.ReadOnly = true;
-            this.tovar.Width = 309;
-            // 
-            // code
-            // 
-            this.code.HeaderText = "code";
-            this.code.Name = "code";
-            this.code.ReadOnly = true;
-            this.code.Width = 28;
-            // 
-            // naimen
-            // 
-            this.naimen.HeaderText = "naimen";
-            this.naimen.Name = "naimen";
-            this.naimen.ReadOnly = true;
-            this.naimen.Width = 47;
-            // 
-            // okey
-            // 
-            this.okey.HeaderText = "okey";
-            this.okey.Name = "okey";
-            this.okey.ReadOnly = true;
-            this.okey.Width = 35;
-            // 
-            // upak
-            // 
-            this.upak.HeaderText = "upak";
-            this.upak.Name = "upak";
-            this.upak.ReadOnly = true;
-            this.upak.Width = 28;
-            // 
-            // vodnom
-            // 
-            this.vodnom.HeaderText = "vodnom";
-            this.vodnom.Name = "vodnom";
-            this.vodnom.ReadOnly = true;
-            this.vodnom.Width = 42;
-            // 
-            // mest
-            // 
-            this.mest.HeaderText = "mest";
-            this.mest.Name = "mest";
-            this.mest.ReadOnly = true;
-            this.mest.Width = 35;
-            // 
-            // brutto
-            // 
-            this.brutto.HeaderText = "brutto";
-            this.brutto.Name = "brutto";
-            this.brutto.ReadOnly = true;
-            this.brutto.Width = 30;
-            // 
-            // netto
-            // 
-            this.netto.HeaderText = "netto";
-            this.netto.Name = "netto";
-            this.netto.ReadOnly = true;
-            this.netto.Width = 46;
-            // 
-            // cena
-            // 
-            this.cena.HeaderText = "cena";
-            this.cena.Name = "cena";
-            this.cena.ReadOnly = true;
-            this.cena.Width = 78;
-            // 
-            // sum
-            // 
-            this.sum.HeaderText = "sum";
-            this.sum.Name = "sum";
-            this.sum.ReadOnly = true;
-            this.sum.Width = 90;
-            // 
-            // nds
-            // 
-            this.nds.HeaderText = "nds";
-            this.nds.Name = "nds";
-            this.nds.ReadOnly = true;
-            this.nds.Width = 58;
-            // 
-            // sumnds
-            // 
-            this.sumnds.HeaderText = "sumnds";
-            this.sumnds.Name = "sumnds";
-            this.sumnds.ReadOnly = true;
-            this.sumnds.Width = 90;
-            // 
-            // summsnds
-            // 
-            this.summsnds.HeaderText = "summsnds";
-            this.summsnds.Name = "summsnds";
-            this.summsnds.ReadOnly = true;
-            this.summsnds.Width = 124;
-            // 
-            // payname
-            // 
-            this.payname.AutoSize = true;
-            this.payname.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.payname.Location = new System.Drawing.Point(135, 179);
-            this.payname.Name = "payname";
-            this.payname.Size = new System.Drawing.Size(29, 9);
-            this.payname.TabIndex = 132;
-            this.payname.Text = "label57";
-            this.payname.Click += new System.EventHandler(this.label57_Click);
-            // 
-            // prname
-            // 
-            this.prname.AutoSize = true;
-            this.prname.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.prname.Location = new System.Drawing.Point(135, 156);
-            this.prname.Name = "prname";
-            this.prname.Size = new System.Drawing.Size(29, 9);
-            this.prname.TabIndex = 131;
-            this.prname.Text = "label56";
-            // 
-            // clname
-            // 
-            this.clname.AutoSize = true;
-            this.clname.BackColor = System.Drawing.Color.White;
-            this.clname.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.clname.Location = new System.Drawing.Point(134, 127);
-            this.clname.Name = "clname";
-            this.clname.Size = new System.Drawing.Size(29, 9);
-            this.clname.TabIndex = 130;
-            this.clname.Text = "label55";
+            this.invoceCreate.Location = new System.Drawing.Point(1013, 877);
+            this.invoceCreate.Name = "invoceCreate";
+            this.invoceCreate.Size = new System.Drawing.Size(90, 32);
+            this.invoceCreate.TabIndex = 130;
+            this.invoceCreate.Text = "Create Invoce";
+            this.invoceCreate.UseVisualStyleBackColor = true;
+            this.invoceCreate.Click += new System.EventHandler(this.invoceCreate_Click);
             // 
             // Invoce
             // 
@@ -2011,14 +2027,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1126, 921);
+            this.Controls.Add(this.invoceCreate);
             this.Controls.Add(this.gb1);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Invoce";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Invoce";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.Invoce_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -2187,5 +2207,6 @@
         private System.Windows.Forms.Label payname;
         private System.Windows.Forms.Label clname;
         private System.Windows.Forms.Label prname;
+        private System.Windows.Forms.Button invoceCreate;
     }
 }

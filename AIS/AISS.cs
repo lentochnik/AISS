@@ -204,5 +204,20 @@ namespace AIS
             toolStripProgressBar1.Visible = false;
             toolStripStatusLabel.Visible = false;
         }
+
+        private void infoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            toolStripStatusLabel.Visible = true;
+            toolStripProgressBar1.Visible = true;
+            toolStripProgressBar1.Value = 0;
+            info inf = new info();
+            toolStripProgressBar1.Value = 50;
+            inf.MdiParent = this;
+            toolStripProgressBar1.Value = 75;
+            inf.Show();
+            toolStripProgressBar1.Value = 100;
+            toolStripProgressBar1.Visible = false;
+            toolStripStatusLabel.Visible = false;
+        }
     }
 }

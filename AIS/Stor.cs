@@ -28,7 +28,7 @@ namespace AIS
 
         public void update_data()
         {
-        
+        try { 
 
             conn.Open();
             MySqlCommand cmd = new MySqlCommand("Select * From stor", conn);
@@ -54,7 +54,11 @@ namespace AIS
 
 
             conn.Close();
-
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     
 
@@ -74,6 +78,7 @@ namespace AIS
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
+            try { 
             if (dataGridView1.Rows.Count != 0)
             {
                 foreach (DataGridViewRow row in dataGridView1.SelectedRows)
@@ -108,6 +113,11 @@ namespace AIS
             }
             conn.Close();
         }
+                 catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+}
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -117,11 +127,6 @@ namespace AIS
         
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-            update_data();
-        }
-
         public object Convert(object value)
         {
             return value.ToString().Replace(",", ".");
@@ -129,12 +134,19 @@ namespace AIS
 
         private void button1_Click(object sender, EventArgs e)
         {
+            try
+            {
             conn.Open();
             MySqlCommand cmd = new MySqlCommand("Update stor Set product='" + textBox2.Text + "', quantity='" + textBox3.Text + "', price='" +Convert(textBox4.Text) +
                 "', nds='" + Convert(comboBox1.Text) + "' Where idStor='" + int.Parse(textBox1.Text) + "'", conn);
             cmd.ExecuteNonQuery();
             conn.Close();
             update_data();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void textBox4_KeyPress(object sender, KeyPressEventArgs e)
@@ -148,19 +160,19 @@ namespace AIS
 
         private void button3_Click(object sender, EventArgs e)
         {
+            try { 
             conn.Open();
             MySqlCommand cmd = new MySqlCommand("Delete From stor Where idStor = '" + int.Parse(textBox1.Text) + "'", conn);
             cmd.ExecuteNonQuery();
             conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
-           
+
         }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 

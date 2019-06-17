@@ -13,6 +13,7 @@ namespace AIS
 {
     public partial class Client_Info : Form
     {
+       
         public Client_Info()
         {
             InitializeComponent();
@@ -74,7 +75,7 @@ namespace AIS
 
         private void But_CIcreate_Click(object sender, EventArgs e)
         {
-
+try { 
 /*---------------------------Генерируется номер заявки------------------------------------------------------*
  *  Год + Юр/Физ(0/1) + Страна(0-193) + валюта(0-2) + 3 последних цифры ИНН + 3 послед. цифры кпп           *
  *                              Пример: 2019 1 100 0 398 351                                                *
@@ -147,25 +148,40 @@ namespace AIS
                 abc += 1; // если вводится повторный номер клиента то добавляем к неомеру 1 (не +1)
                 goto m;  
             };
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
 
         public bool ID_check(string z) // Проверка Номера клиента
         {
-            bool x;
+          bool x;
+            try { 
+           
 
             conn.Open();
             MySqlDataAdapter sda = new MySqlDataAdapter("Select Id From Clients Where Id='" + z + "'", conn); // номер ID из базы клиентов
             DataTable dt = new DataTable();
             sda.Fill(dt);
 
-            if (dt.Rows.Count == 1) // Если количество строк равно 1 то переходим в блок ошибка
-                x = false;
-            else                    // Иначе передаем переменной х значение истина
-                x = true;
+                if (dt.Rows.Count == 1) // Если количество строк равно 1 то переходим в блок ошибка
+                { x = false; }
+                else                    // Иначе передаем переменной х значение истина
+                { x = true; }
 
             conn.Close();
-            return x;
+
+                return x;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
         }
         private void Cclinum_TextChanged(object sender, EventArgs e)
         {
